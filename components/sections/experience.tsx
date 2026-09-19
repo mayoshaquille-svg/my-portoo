@@ -78,7 +78,7 @@ export function Experience() {
             {experiences.map((exp, idx) => (
               <li
                 key={`${exp.company}-${exp.role}`}
-                className={`reveal reveal-delay-${Math.min(idx + 1, 4)} relative grid gap-6 sm:grid-cols-2 sm:items-start`}
+                className={`reveal reveal-delay-${Math.min(idx + 1, 4)} relative grid gap-4 pl-10 sm:grid-cols-2 sm:items-start sm:gap-6 sm:pl-0`}
               >
                 {/* Period label -- alternating side */}
                 <div
