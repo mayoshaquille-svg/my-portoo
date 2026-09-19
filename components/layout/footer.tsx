@@ -1,7 +1,8 @@
-import { ArrowUpRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 import { site } from "@/lib/constants";
 import { Separator } from "@/components/ui/separator";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
 
 export function Footer() {
   return (
@@ -16,35 +17,32 @@ export function Footer() {
           </div>
           <nav
             aria-label="Social"
-            className="flex flex-col gap-1 sm:flex-row sm:items-center"
+            className="flex items-center gap-1"
           >
             <a
               href={site.email}
               aria-label="Email"
-              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-md px-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="inline-flex min-h-[44px] w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               <Mail className="h-4 w-4" aria-hidden="true" />
-              Email
             </a>
             <a
               href={site.linkedin}
               aria-label="LinkedIn (opens in new tab)"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-md px-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="inline-flex min-h-[44px] w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
-              LinkedIn
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              <LinkedinIcon size={16} />
             </a>
             <a
               href={site.github}
               aria-label="GitHub (opens in new tab)"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-md px-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="inline-flex min-h-[44px] w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
-              GitHub
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              <GithubIcon size={16} />
             </a>
           </nav>
         </div>
