@@ -2,13 +2,7 @@
 
 import { experiences } from "@/lib/data/experience";
 import { SectionHeader } from "@/components/ui/section-header";
-
-const fields = [
-  { key: "action", label: "Action" },
-  { key: "system", label: "System" },
-  { key: "contribution", label: "Contribution" },
-  { key: "result", label: "Result" },
-] as const;
+import { Badge } from "@/components/ui/badge";
 
 export function Experience() {
   return (
@@ -20,9 +14,9 @@ export function Experience() {
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         <SectionHeader
           id="experience-heading"
-          eyebrow="05 \u00b7 Experience"
+          eyebrow="05 · Experience"
           title="Experience"
-          description="Each support role broken down by action, system, contribution, and result."
+          description="Support roles across field operations, events, and network services."
         />
 
         {/* Timeline */}
@@ -60,7 +54,7 @@ export function Experience() {
                 {/* Content card */}
                 <article
                   className={`rounded-md border border-border bg-surface-0 p-5 sm:col-span-1 ${
-                    idx % 2 === 0 ? "sm:order-2" : "sm:order-1 sm:text-right"
+                    idx % 2 === 0 ? "sm:order-2" : "sm:order-1"
                   }`}
                 >
                   <h3 className="flex items-center gap-2 font-medium">
@@ -77,18 +71,15 @@ export function Experience() {
                     </span>
                   </h3>
 
-                  <dl className="mt-4 grid gap-3 sm:grid-cols-2">
-                    {fields.map((field) => (
-                      <div key={field.key}>
-                        <dt className="font-mono text-[11px] font-semibold uppercase tracking-widest text-foreground">
-                          {field.label}
-                        </dt>
-                        <dd className="mt-1 text-sm leading-6 text-muted-foreground">
-                          {exp[field.key]}
-                        </dd>
-                      </div>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <Badge variant="accent">{exp.type}</Badge>
+                  </div>
+
+                  <ul className="mt-4 flex list-disc flex-col gap-1.5 pl-5 text-left text-sm leading-6 text-muted-foreground">
+                    {exp.responsibilities.map((item) => (
+                      <li key={item}>{item}</li>
                     ))}
-                  </dl>
+                  </ul>
                 </article>
               </li>
             ))}

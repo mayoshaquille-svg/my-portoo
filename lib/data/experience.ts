@@ -2,29 +2,37 @@ import type { Experience } from "@/types/experience";
 
 export const experiences: Experience[] = [
   {
-    company: "BPS Riau",
-    role: "IT Support",
-    period: "2023 — Present",
-    action:
-      "Responded to daily support tickets and maintained the internal data system and office infrastructure.",
-    system:
-      "Office workstations, local network, and internal Laravel/MySQL data system.",
-    contribution:
-      "Troubleshot hardware, software, and network issues, assisted users, and kept data and reporting views aligned with office procedures.",
-    result:
-      "Office workflows supported by a maintained system with documented fixes for recurring issues.",
+    company: "Pertamina EP Field Lirik — ICT",
+    role: "IT Support Intern",
+    period: "Jan 2025 — Feb 2025",
+    type: "Internship",
+    responsibilities: [
+      "Built a digital company information display",
+      "Inspected and repaired CCTV units",
+      "Installed and configured WiFi access points",
+      "Installed and tidied LAN network cabling",
+      "Maintained IT devices and network equipment",
+    ],
   },
   {
-    company: "Freelance",
-    role: "Application Support",
-    period: "2022 — 2023",
-    action:
-      "Supported delivery and handover of the SIPEMTRA travel ticket booking system.",
-    system:
-      "Laravel/MySQL application with role-based access for operators.",
-    contribution:
-      "Tested transaction flows, fixed issues found, and guided operators during handover.",
-    result:
-      "Booking records managed in one structured system instead of manual files.",
+    company: "EMP Riau Lirik — K3 Event",
+    role: "Event Photographer",
+    period: "Feb 2025",
+    type: "Part-time",
+    responsibilities: [
+      "Documented company activities and events through quality photography aligned with documentation requirements",
+    ],
+  },
+  {
+    company: "Telkom Plasa Air Molek",
+    role: "Technician / IT Support Intern",
+    period: "Sep 2021 — Dec 2021",
+    type: "Internship",
+    responsibilities: [
+      "Assisted installation and maintenance of internet network connections",
+      "Inspected and repaired network disruptions",
+      "Installed and pulled network cabling",
+      "Assisted configuration and checks of network devices",
+    ],
   },
 ];
