@@ -20,7 +20,6 @@ export const site = {
 export const nav: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Capabilities", href: "#capabilities" },
-  { label: "Systems", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
