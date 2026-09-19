@@ -3,32 +3,38 @@ import {
   Crosshair,
   Database,
   FileText,
-  Globe,
+  Headset,
   Inbox,
+  MonitorCog,
+  Network,
   Search,
-  ShieldCheck,
+  Wifi,
   Wrench,
 } from "lucide-react";
 
 import { capabilities } from "@/lib/data/capabilities";
 import type {
-  Capability,
   CapabilityGroup,
+  CapabilityIcon,
 } from "@/types/capability";
 import { SectionHeader } from "@/components/ui/section-header";
 
-const capabilityIcons: Record<Capability["icon"], typeof Wrench> = {
+const capabilityIcons: Record<CapabilityIcon, typeof Wrench> = {
   Wrench,
+  Headset,
+  MonitorCog,
   Database,
-  Globe,
-  ShieldCheck,
+  Network,
+  Wifi,
+  FileText,
+  ClipboardCheck,
 };
 
 const groups: CapabilityGroup[] = [
   "IT Support",
   "Systems",
-  "Software",
-  "Infrastructure",
+  "Network",
+  "Support Docs",
 ];
 
 const troubleshootingFlow = [

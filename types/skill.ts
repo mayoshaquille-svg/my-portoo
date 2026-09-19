@@ -1,8 +1,8 @@
 export type SkillDomain =
   | "IT Support"
   | "Systems"
-  | "Software"
-  | "Infrastructure";
+  | "Infrastructure"
+  | "Tools";
 
 export interface Skill {
   name: string;

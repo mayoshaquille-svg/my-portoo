@@ -3,13 +3,13 @@ import type { Project } from "@/types/project";
 export const projects: Project[] = [
   {
     slug: "bps-riau-data-monitoring",
-    title: "BPS Riau — Internal Data Monitoring",
+    title: "BPS Riau — Internal Data System",
     context:
-      "Internal web application supporting data management and reporting workflows at BPS Riau, built alongside day-to-day IT support duties.",
+      "Internal data system at BPS Riau supported day to day: user assistance, issue handling, data checks, and maintenance of the Laravel/MySQL application.",
     problem:
-      "Operational data was spread across manual files, making entry, review, and follow-up slow and error-prone for staff.",
+      "Staff faced slow, error-prone data entry and review across manual files, plus recurring usage issues needing troubleshooting.",
     solution:
-      "Built a Laravel/MySQL application with structured data entry forms, role-based access, and reporting views matched to the existing office workflow.",
+      "Supported a structured Laravel/MySQL system with validated entry forms, role-based access, and reporting views matched to the office workflow, and troubleshot user issues as they arose.",
     architecture:
       "Laravel MVC with Blade views, MySQL relational schema for master and transaction data, and middleware-based access control.",
     technicalDecisions: [
@@ -18,14 +18,14 @@ export const projects: Project[] = [
       "Role-based access for data entry and review responsibilities",
     ],
     role: [
-      "Developed and maintained the Laravel/MySQL application",
       "Provided support and troubleshooting for office users",
-      "Managed data structure and reporting needs",
+      "Maintained the Laravel/MySQL application and data structure",
+      "Kept reporting views aligned with office procedures",
     ],
     challenges: [
-      "Matching form fields to real office procedures without overcomplicating entry",
+      "Diagnosing user-reported issues across entry, data, and access layers",
       "Keeping reports readable as data volume grew",
-      "Supporting non-technical users with clear guidance",
+      "Guiding non-technical users with clear steps",
     ],
     technologies: ["Laravel", "MySQL", "Blade", "Bootstrap"],
     status: "production",
@@ -33,13 +33,13 @@ export const projects: Project[] = [
   },
   {
     slug: "sipemtra-travel-ticket-booking",
-    title: "SIPEMTRA — Travel Ticket Booking",
+    title: "SIPEMTRA — Travel Ticket Booking System",
     context:
-      "Ticket booking information system for travel scheduling and passenger records, developed as a backend-focused Laravel/MySQL application.",
+      "Ticket booking system for travel scheduling and passenger records, supported through delivery and handover: testing, fixes, and operator guidance.",
     problem:
-      "Booking and schedule records were managed manually, which complicated availability checks and transaction tracking.",
+      "Manual booking and schedule records complicated availability checks and transaction tracking for operators.",
     solution:
-      "Implemented a backend transaction flow covering schedules, bookings, and passenger data with validation at each step.",
+      "Supported delivery of a Laravel/MySQL transaction flow covering schedules, bookings, and passenger data with validation at each step.",
     architecture:
       "Laravel MVC backend with MySQL relations between schedules, bookings, and passengers, plus guarded transaction writes.",
     technicalDecisions: [
@@ -48,13 +48,13 @@ export const projects: Project[] = [
       "Separated admin and operator responsibilities",
     ],
     role: [
-      "Designed the backend structure and transaction flow",
-      "Implemented booking, schedule, and passenger management",
-      "Handled testing and fixes during delivery",
+      "Tested booking, schedule, and passenger flows and fixed issues found",
+      "Supported operators during handover with usage guidance",
+      "Documented the transaction flow for ongoing maintenance",
     ],
     challenges: [
-      "Keeping booking state consistent across schedule changes",
-      "Designing forms simple enough for operators to use daily",
+      "Tracing booking inconsistencies across schedule changes",
+      "Making the flow understandable for daily operators",
     ],
     technologies: ["Laravel", "MySQL", "Blade"],
     status: "completed",
@@ -62,13 +62,13 @@ export const projects: Project[] = [
   },
   {
     slug: "inventory-borrowing-return",
-    title: "Inventory — Borrowing and Return",
+    title: "Inventory — Borrowing and Return System",
     context:
-      "Inventory application for tracking items with borrowing and return records. Currently in active development.",
+      "Inventory system for tracking items with borrowing and return records. Currently in active development with supportability in mind.",
     problem:
       "Item loans were tracked informally, so availability and return status were hard to confirm.",
     solution:
-      "Building borrowing and return flows with item status tracking and transaction history. Scope is limited to what is implemented so far.",
+      "Preparing borrowing and return flows with item status tracking and transaction history. Scope is limited to what is implemented so far.",
     architecture:
       "Laravel MVC with MySQL tables for items and loan transactions, status field per item.",
     technicalDecisions: [
@@ -76,8 +76,8 @@ export const projects: Project[] = [
       "In-progress scope: borrowing and return only, no production claims",
     ],
     role: [
-      "Designing the item and loan data model",
-      "Implementing borrowing and return flows",
+      "Preparing the item and loan data model",
+      "Testing borrowing and return flows as they are built",
     ],
     challenges: [
       "Defining loan states clearly before adding more features",

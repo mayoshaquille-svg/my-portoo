@@ -9,52 +9,52 @@ export const capabilities: Capability[] = [
     group: "IT Support",
   },
   {
-    title: "User Support and Documentation",
+    title: "User Support",
     description:
-      "Guide non-technical users with clear steps and record fixes for future reference.",
-    icon: "ShieldCheck",
+      "Direct assistance and clear step-by-step guidance for non-technical users.",
+    icon: "Headset",
     group: "IT Support",
   },
   {
-    title: "Laravel / MySQL Development",
+    title: "Application Support",
     description:
-      "CRUD applications with auth, role-based access, and reporting views for office workflows.",
+      "Support and maintain internal Laravel/MySQL business systems, including user assistance and issue handling.",
+    icon: "MonitorCog",
+    group: "Systems",
+  },
+  {
+    title: "Data and Reporting Support",
+    description:
+      "MySQL data checks, validation, and reporting views matched to office workflows.",
     icon: "Database",
     group: "Systems",
   },
   {
-    title: "Data Management",
+    title: "Network Support",
     description:
-      "Relational schema design, validation, and reporting views for operational data.",
-    icon: "Database",
-    group: "Systems",
+      "Local network checks, connectivity diagnosis, and peripheral setup.",
+    icon: "Network",
+    group: "Network",
   },
   {
-    title: "Responsive Web Interfaces",
+    title: "Connectivity Troubleshooting",
     description:
-      "Server-rendered views and responsive layouts with HTML, CSS, and modern tooling.",
-    icon: "Globe",
-    group: "Software",
+      "Isolate connectivity faults across device, cable or WiFi, and configuration layers.",
+    icon: "Wifi",
+    group: "Network",
   },
   {
-    title: "Backend Transaction Flows",
+    title: "Documentation",
     description:
-      "Booking, inventory, and record flows with validation at each step.",
-    icon: "Globe",
-    group: "Software",
+      "Record fixes and procedures so recurring issues are resolved faster next time.",
+    icon: "FileText",
+    group: "Support Docs",
   },
   {
-    title: "System Reliability",
+    title: "Verification and Follow-up",
     description:
-      "Backups, basic hardening, and preventive maintenance to keep office systems running.",
-    icon: "ShieldCheck",
-    group: "Infrastructure",
-  },
-  {
-    title: "Network and Hardware Basics",
-    description:
-      "Local network checks, peripheral setup, and hardware maintenance.",
-    icon: "Wrench",
-    group: "Infrastructure",
+      "Retest with the reporter, confirm resolution, and run preventive checks.",
+    icon: "ClipboardCheck",
+    group: "Support Docs",
   },
 ];

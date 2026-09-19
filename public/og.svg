@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="og-title og-desc">
   <title id="og-title">Mayo — IT Support</title>
-  <desc id="og-desc">Monochrome portfolio cover: Mayo, IT Support, Systems and Infrastructure.</desc>
+  <desc id="og-desc">Monochrome portfolio cover: Mayo, IT Support, systems and troubleshooting.</desc>
   <rect width="1200" height="630" fill="#FFFFFF"/>
   <rect x="24" y="24" width="1152" height="582" fill="none" stroke="#000000" stroke-width="4"/>
   <rect x="48" y="48" width="120" height="24" fill="#000000"/>
   <text x="80" y="240" font-family="monospace" font-size="64" font-weight="bold" letter-spacing="8" fill="#000000">MAYO</text>
   <text x="80" y="320" font-family="monospace" font-size="40" letter-spacing="4" fill="#000000">IT SUPPORT</text>
   <line x1="80" y1="360" x2="1120" y2="360" stroke="#CCCCCC" stroke-width="2"/>
-  <text x="80" y="420" font-family="monospace" font-size="28" letter-spacing="2" fill="#666666">SYSTEMS / INFRASTRUCTURE</text>
-  <text x="80" y="470" font-family="monospace" font-size="28" letter-spacing="2" fill="#666666">LARAVEL / MYSQL</text>
+  <text x="80" y="420" font-family="monospace" font-size="28" letter-spacing="2" fill="#666666">SYSTEMS / TROUBLESHOOTING</text>
+  <text x="80" y="470" font-family="monospace" font-size="28" letter-spacing="2" fill="#666666">USER SUPPORT / MAINTENANCE</text>
   <rect x="80" y="520" width="200" height="40" fill="#000000"/>
   <text x="100" y="548" font-family="monospace" font-size="22" letter-spacing="2" fill="#FFFFFF">RIAU, ID</text>
 </svg>

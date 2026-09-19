@@ -1,3 +1,5 @@
+import { Building2, Calendar } from "lucide-react";
+
 import { experiences } from "@/lib/data/experience";
 import { SectionHeader } from "@/components/ui/section-header";
 
@@ -20,7 +22,7 @@ export function Experience() {
           id="experience-heading"
           eyebrow="05 / Experience"
           title="Experience"
-          description="Each role broken down by action, system, contribution, and result."
+          description="Each support role broken down by action, system, contribution, and result."
         />
         <ol className="mt-6 flex list-none flex-col gap-4 p-0">
           {experiences.map((exp) => (
@@ -30,10 +32,17 @@ export function Experience() {
             >
               <article>
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                  <h3 className="font-medium">
+                  <h3 className="flex items-center gap-2 font-medium">
+                    <Building2
+                      className="h-4 w-4 shrink-0 text-muted-foreground"
+                      aria-hidden="true"
+                    />
                     {exp.role} — {exp.company}
                   </h3>
-                  <p className="font-mono text-xs text-subtle">{exp.period}</p>
+                  <p className="flex items-center gap-1.5 font-mono text-xs text-subtle">
+                    <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
+                    {exp.period}
+                  </p>
                 </div>
                 <dl className="mt-4 grid gap-3 sm:grid-cols-2">
                   {fields.map((field) => (

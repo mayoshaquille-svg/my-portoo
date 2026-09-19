@@ -12,9 +12,9 @@ export function Projects() {
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         <SectionHeader
           id="projects-heading"
-          eyebrow="03 / Projects"
-          title="Projects"
-          description="Mini case studies: context, problem, solution, and the decisions behind each build."
+          eyebrow="03 / Supported Systems"
+          title="Supported Systems"
+          description="Systems I support and maintain: the issue context, how each system is kept running, and the support role behind it."
         />
         <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (

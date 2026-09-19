@@ -1,13 +1,7 @@
-import { Briefcase, FolderGit, Mail } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 
 import { site } from "@/lib/constants";
 import { Separator } from "@/components/ui/separator";
-
-const socials = [
-  { label: "Email", href: site.email, Icon: Mail },
-  { label: "LinkedIn", href: site.linkedin, Icon: Briefcase },
-  { label: "GitHub", href: site.github, Icon: FolderGit },
-] as const;
 
 export function Footer() {
   return (
@@ -20,19 +14,38 @@ export function Footer() {
             </p>
             <p className="text-sm text-muted-foreground">{site.location}</p>
           </div>
-          <nav aria-label="Social" className="flex items-center gap-1">
-            {socials.map(({ label, href, Icon }) => (
-              <a
-                key={label}
-                href={href}
-                aria-label={label}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-              >
-                <Icon className="h-5 w-5" aria-hidden="true" />
-              </a>
-            ))}
+          <nav
+            aria-label="Social"
+            className="flex flex-col gap-1 sm:flex-row sm:items-center"
+          >
+            <a
+              href={site.email}
+              aria-label="Email"
+              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-md px-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <Mail className="h-4 w-4" aria-hidden="true" />
+              Email
+            </a>
+            <a
+              href={site.linkedin}
+              aria-label="LinkedIn (opens in new tab)"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-md px-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              LinkedIn
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+            <a
+              href={site.github}
+              aria-label="GitHub (opens in new tab)"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-md px-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              GitHub
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </a>
           </nav>
         </div>
         <Separator />

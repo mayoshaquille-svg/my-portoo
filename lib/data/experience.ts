@@ -3,26 +3,27 @@ import type { Experience } from "@/types/experience";
 export const experiences: Experience[] = [
   {
     company: "BPS Riau",
-    role: "IT Support / Web Developer",
+    role: "IT Support",
     period: "2023 — Present",
     action:
-      "Responded to daily support tickets and maintained internal Laravel/MySQL applications for data workflows.",
+      "Responded to daily support tickets and maintained the internal data system and office infrastructure.",
     system:
-      "Office workstations, local network, and internal data monitoring application with MySQL backend.",
+      "Office workstations, local network, and internal Laravel/MySQL data system.",
     contribution:
-      "Resolved hardware, software, and network issues, and developed reporting views matched to office procedures.",
+      "Troubleshot hardware, software, and network issues, assisted users, and kept data and reporting views aligned with office procedures.",
     result:
-      "Office workflows supported by a structured data application with documented fixes for recurring issues.",
+      "Office workflows supported by a maintained system with documented fixes for recurring issues.",
   },
   {
     company: "Freelance",
-    role: "Web Developer",
+    role: "Application Support",
     period: "2022 — 2023",
     action:
-      "Built the SIPEMTRA travel ticket booking backend covering schedules, bookings, and passenger records.",
-    system: "Laravel/MySQL application with role-based access for operators.",
+      "Supported delivery and handover of the SIPEMTRA travel ticket booking system.",
+    system:
+      "Laravel/MySQL application with role-based access for operators.",
     contribution:
-      "Designed the transaction flow and validation rules, then handled testing and fixes during delivery.",
+      "Tested transaction flows, fixed issues found, and guided operators during handover.",
     result:
       "Booking records managed in one structured system instead of manual files.",
   },

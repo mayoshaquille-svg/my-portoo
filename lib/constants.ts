@@ -8,7 +8,7 @@ export const site = {
   role: "IT Support",
   title: "Mayo — IT Support",
   description:
-    "Mayo is an IT Support specialist focused on troubleshooting, reliable systems, Laravel/MySQL software, and office infrastructure.",
+    "Mayo is an IT Support specialist focused on troubleshooting, user support, system maintenance, application support, infrastructure support, and documentation.",
   url: "https://example.com",
   email: "mailto:hello@example.com",
   emailLabel: "hello@example.com",
@@ -20,7 +20,7 @@ export const site = {
 export const nav: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Capabilities", href: "#capabilities" },
-  { label: "Projects", href: "#projects" },
+  { label: "Systems", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },

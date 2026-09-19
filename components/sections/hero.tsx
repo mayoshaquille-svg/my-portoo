@@ -10,7 +10,7 @@ export function Hero() {
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         <div className="flex flex-col gap-6">
           <Badge variant="outline" className="w-fit">
-            {site.location} / Open to work
+            IT Support / Open to work — {site.location}
           </Badge>
           <h1
             id="hero-heading"
@@ -24,7 +24,7 @@ export function Hero() {
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
               <a href="#projects">
-                View projects
+                View supported systems
                 <ArrowRight aria-hidden="true" />
               </a>
             </Button>

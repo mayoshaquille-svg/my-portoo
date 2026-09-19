@@ -1,23 +1,13 @@
-import { ArrowUpRight, Briefcase, FolderGit, Mail } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 
 import { site } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/ui/section-header";
 
-const channels = [
-  {
-    label: "LinkedIn",
-    href: site.linkedin,
-    Icon: Briefcase,
-    variant: "outline" as const,
-  },
-  {
-    label: "GitHub",
-    href: site.github,
-    Icon: FolderGit,
-    variant: "outline" as const,
-  },
-];
+const externals = [
+  { label: "LinkedIn", href: site.linkedin },
+  { label: "GitHub", href: site.github },
+] as const;
 
 export function Contact() {
   return (
@@ -36,17 +26,15 @@ export function Contact() {
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Button asChild size="lg">
             <a href={site.email}>
-              <Mail aria-hidden="true" />
+              <Mail className="h-4 w-4" aria-hidden="true" />
               {site.emailLabel}
-              <ArrowUpRight aria-hidden="true" />
             </a>
           </Button>
-          {channels.map(({ label, href, Icon, variant }) => (
-            <Button key={label} asChild variant={variant} size="lg">
+          {externals.map(({ label, href }) => (
+            <Button key={label} asChild variant="outline" size="lg">
               <a href={href} target="_blank" rel="noopener noreferrer">
-                <Icon aria-hidden="true" />
                 {label}
-                <ArrowUpRight aria-hidden="true" />
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </Button>
           ))}

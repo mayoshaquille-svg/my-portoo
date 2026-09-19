@@ -1,23 +1,40 @@
-import { ArrowUpRight } from "lucide-react";
+import { CircleCheck, Construction, Monitor } from "lucide-react";
 
 import type { Project, ProjectStatus } from "@/types/project";
 import { Badge } from "@/components/ui/badge";
 
-const statusLabel: Record<ProjectStatus, string> = {
-  production: "Production",
-  completed: "Completed",
-  "in-development": "In Development",
+const statusMeta: Record<
+  ProjectStatus,
+  { label: string; Icon: typeof CircleCheck }
+> = {
+  production: { label: "Production", Icon: CircleCheck },
+  completed: { label: "Completed", Icon: CircleCheck },
+  "in-development": { label: "In Development", Icon: Construction },
 };
 
 export function ProjectCard({ project }: { project: Project }) {
+  const status = statusMeta[project.status];
+
   return (
     <article className="flex flex-col gap-4 rounded-md border border-border bg-background p-5">
       <div className="flex items-center justify-between gap-2">
         <Badge variant="outline">{project.year}</Badge>
-        <Badge>{statusLabel[project.status]}</Badge>
+        <Badge>
+          <status.Icon className="h-3.5 w-3.5" aria-hidden="true" />
+          {status.label}
+        </Badge>
       </div>
 
-      <h3 className="text-base font-medium leading-6">{project.title}</h3>
+      <h3 className="flex items-start gap-2 text-base font-medium leading-6">
+        <Monitor
+          className="mt-1 h-4 w-4 shrink-0 text-muted-foreground"
+          aria-hidden="true"
+        />
+        <span>
+          {project.title}
+          <span className="sr-only"> (supported system)</span>
+        </span>
+      </h3>
       <p className="text-sm leading-6 text-muted-foreground">
         {project.context}
       </p>
@@ -79,39 +96,16 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="mt-auto flex flex-col gap-3 pt-2">
-        <div className="flex flex-wrap gap-1.5">
+        <div
+          className="flex flex-wrap gap-1.5"
+          aria-label="Technologies in the supported system"
+        >
           {project.technologies.map((tech) => (
             <Badge key={tech} variant="outline">
               {tech}
             </Badge>
           ))}
         </div>
-        {project.liveUrl ?? project.repositoryUrl ? (
-          <div className="flex flex-wrap gap-3">
-            {project.liveUrl ? (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center gap-1 rounded-md text-sm font-medium underline-offset-4 hover:underline"
-              >
-                Live site
-                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-            ) : null}
-            {project.repositoryUrl ? (
-              <a
-                href={project.repositoryUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center gap-1 rounded-md text-sm font-medium underline-offset-4 hover:underline"
-              >
-                Repository
-                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-            ) : null}
-          </div>
-        ) : null}
       </div>
     </article>
   );

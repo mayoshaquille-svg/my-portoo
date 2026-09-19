@@ -4,9 +4,12 @@ import { SectionHeader } from "@/components/ui/section-header";
 const facts = [
   {
     key: "Focus",
-    value: "Reliability, clarity, fast response on support and systems",
+    value: "Troubleshooting, user support, and system maintenance",
   },
-  { key: "Stack", value: "Laravel, MySQL, Blade, Next.js" },
+  {
+    key: "Systems",
+    value: "Office systems, Laravel/MySQL business apps, local network",
+  },
   { key: "Base", value: "Riau, Indonesia" },
 ] as const;
 
@@ -22,7 +25,7 @@ export function About() {
           id="about-heading"
           eyebrow="01 / About"
           title="About"
-          description="IT Support specialist with hands-on web development experience. Comfortable across helpdesk troubleshooting and Laravel/MySQL application work."
+          description="IT Support specialist focused on troubleshooting, user support, system maintenance, and application support. Familiarity with Laravel/MySQL systems helps me diagnose issues faster — supporting the system is the job, not showcasing builds."
         />
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {facts.map((item) => (
@@ -38,8 +41,8 @@ export function About() {
           ))}
         </div>
         <p className="mt-6 max-w-2xl text-sm leading-6 text-muted-foreground">
-          Currently based in {site.location}, working across office systems
-          support and internal web applications.
+          Currently based in {site.location}, providing support, maintenance,
+          and documentation for office systems and internal applications.
         </p>
       </div>
     </section>
