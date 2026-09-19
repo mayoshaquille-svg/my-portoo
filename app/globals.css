@@ -47,6 +47,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem; /* 96px — navbar h-16 (64px) + breathing room, matches scroll-mt-24 */
 }
 
 body {
