@@ -63,10 +63,7 @@ export function Projects() {
                         className="mt-1 h-4 w-4 shrink-0 text-accent"
                         aria-hidden="true"
                       />
-                      <span>
-                        {project.title}
-                        <span className="sr-only"> (supported system)</span>
-                      </span>
+                      <span>{project.title}</span>
                     </h3>
 
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">
