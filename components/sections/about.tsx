@@ -64,11 +64,13 @@ export function About() {
               </p>
             </div>
             <p className="text-sm leading-7 text-muted-foreground">
-              IT Support specialist focused on troubleshooting, user support,
-              system maintenance, application support, infrastructure support,
-              and documentation. Experience from IT support internships helps me
-              diagnose issues faster -- troubleshooting and clear documentation
-              are the job.
+              Fresh Graduate in Information Systems from Universitas Riau with
+              experience in IT Support, networking, data analysis, and
+              technology through internships at Plasa Telkom Airmolek and PT
+              Pertamina EP Field Lirik. Experienced in supporting network
+              installation and maintenance, LAN cabling, Wifi installation,
+              CCTV troubleshooting, and developing digital information
+              displays.
             </p>
             <div className="mt-5 pt-4 border-t border-border">
               <p className="font-mono text-[11px] text-subtle">
