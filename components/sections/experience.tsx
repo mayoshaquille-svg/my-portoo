@@ -1,4 +1,4 @@
-import { Building2, Calendar } from "lucide-react";
+﻿import { Building2, Calendar } from "lucide-react";
 
 import { experiences } from "@/lib/data/experience";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -20,17 +20,17 @@ export function Experience() {
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         <SectionHeader
           id="experience-heading"
-          eyebrow="05 · Experience"
+          eyebrow="05 \u00b7 Experience"
           title="Experience"
           description="Each support role broken down by action, system, contribution, and result."
         />
 
         {/* Timeline */}
         <div className="relative mt-8">
-          {/* Vertical line */}
+          {/* Vertical accent rail */}
           <div
             aria-hidden="true"
-            className="absolute left-[19px] top-0 bottom-0 w-px bg-border sm:left-1/2 sm:-translate-x-px"
+            className="absolute left-[19px] top-0 bottom-0 w-px bg-accent/20 sm:left-1/2 sm:-translate-x-px"
           />
 
           <ol className="flex list-none flex-col gap-8 p-0">
@@ -39,7 +39,7 @@ export function Experience() {
                 key={`${exp.company}-${exp.role}`}
                 className="relative grid gap-6 sm:grid-cols-2 sm:items-start"
               >
-                {/* Period label — alternating side */}
+                {/* Period label -- alternating side */}
                 <div
                   className={`flex items-center gap-2 font-mono text-xs text-subtle sm:justify-end ${
                     idx % 2 === 0
@@ -51,28 +51,28 @@ export function Experience() {
                   {exp.period}
                 </div>
 
-                {/* Center node */}
+                {/* Center node -- accent dot */}
                 <div
                   aria-hidden="true"
-                  className="absolute left-[15px] top-1 h-[9px] w-[9px] rounded-full border-2 border-foreground bg-background sm:left-1/2 sm:-translate-x-1/2"
+                  className="absolute left-[15px] top-1 h-[9px] w-[9px] rounded-full border-2 border-accent bg-surface-0 sm:left-1/2 sm:-translate-x-1/2"
                 />
 
                 {/* Content card */}
                 <article
-                  className={`rounded-md border border-border bg-background p-5 sm:col-span-1 ${
+                  className={`rounded-md border border-border bg-surface-0 p-5 sm:col-span-1 ${
                     idx % 2 === 0 ? "sm:order-2" : "sm:order-1 sm:text-right"
                   }`}
                 >
                   <h3 className="flex items-center gap-2 font-medium">
                     <Building2
-                      className="h-4 w-4 shrink-0 text-muted-foreground"
+                      className="h-4 w-4 shrink-0 text-accent"
                       aria-hidden="true"
                     />
                     <span>
                       {exp.role}
                       <span className="text-muted-foreground">
                         {" "}
-                        — {exp.company}
+                        &mdash; {exp.company}
                       </span>
                     </span>
                   </h3>
@@ -80,7 +80,7 @@ export function Experience() {
                   <dl className="mt-4 grid gap-3 sm:grid-cols-2">
                     {fields.map((field) => (
                       <div key={field.key}>
-                        <dt className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">
+                        <dt className="font-mono text-[11px] font-semibold uppercase tracking-widest text-foreground">
                           {field.label}
                         </dt>
                         <dd className="mt-1 text-sm leading-6 text-muted-foreground">

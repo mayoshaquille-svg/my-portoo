@@ -1,4 +1,4 @@
-import { Headset, MonitorCog, Network, Wrench } from "lucide-react";
+﻿import { Headset, MonitorCog, Network, Wrench } from "lucide-react";
 
 import { skills } from "@/lib/data/skills";
 import type { SkillDomain } from "@/types/skill";
@@ -16,18 +16,18 @@ export function Skills() {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="scroll-mt-24 bg-muted py-12 sm:py-16"
+      className="scroll-mt-24 bg-surface-1 py-12 sm:py-16"
     >
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         <SectionHeader
           id="skills-heading"
-          eyebrow="04 · Skills"
+          eyebrow="04 \u00b7 Skills"
           title="Skills"
           description="Grouped by support domain. No ratings, only areas of working experience."
         />
 
         {/* Ledger-style single card */}
-        <div className="mt-8 rounded-md border border-border bg-background p-6">
+        <div className="mt-8 rounded-md border border-border bg-surface-0 p-6">
           {domains.map(({ name, Icon }, groupIdx) => {
             const domainSkills = skills.filter(
               (skill) => skill.category === name,
@@ -40,13 +40,13 @@ export function Skills() {
                 )}
                 <div className="flex items-center gap-2 mb-3">
                   <Icon
-                    className="h-4 w-4 text-muted-foreground"
+                    className="h-4 w-4 text-accent"
                     aria-hidden="true"
                   />
-                  <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-subtle">
+                  <h3 className="font-mono text-[11px] font-semibold uppercase tracking-widest text-subtle">
                     {name}
                   </h3>
-                  <span className="ml-auto font-mono text-xs text-subtle">
+                  <span className="ml-auto font-mono text-[11px] text-subtle">
                     {domainSkills.length}
                   </span>
                 </div>
@@ -54,9 +54,9 @@ export function Skills() {
                   {domainSkills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="flex items-center gap-2 rounded-sm px-2 py-1.5 text-sm text-foreground transition-colors hover:bg-muted"
+                      className="flex items-center gap-2 rounded-sm px-2 py-1.5 text-sm text-foreground transition-colors hover:bg-surface-1"
                     >
-                      <span className="h-1 w-1 shrink-0 rounded-full bg-subtle" />
+                      <span className="h-1 w-1 shrink-0 rounded-full bg-accent" />
                       {skill.name}
                     </div>
                   ))}

@@ -53,7 +53,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-background">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-surface-0/80 backdrop-blur-md">
       <nav
         aria-label="Primary"
         className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-4 sm:px-6"
@@ -62,8 +62,9 @@ export function Navbar() {
           href="#top"
           className="flex min-h-[44px] items-center gap-2 rounded-md font-mono text-sm font-semibold uppercase tracking-widest focus-visible:outline-2"
         >
+          <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
           {site.name}
-          <span className="hidden text-subtle sm:inline">/ {site.role}</span>
+          <span className="hidden text-muted-foreground sm:inline">/ {site.role}</span>
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
@@ -76,7 +77,7 @@ export function Navbar() {
                 aria-current={isActive ? "true" : undefined}
                 className={`inline-flex min-h-[44px] items-center rounded-md px-3 text-sm transition-colors focus-visible:outline-2 ${
                   isActive
-                    ? "border-b-2 border-foreground font-medium text-foreground"
+                    ? "text-accent font-medium"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -104,7 +105,10 @@ export function Navbar() {
             <SheetContent aria-label="Mobile navigation">
               <SheetHeader>
                 <SheetTitle>
-                  {site.name} / {site.role}
+                  <span className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
+                    {site.name} / {site.role}
+                  </span>
                 </SheetTitle>
               </SheetHeader>
               <nav aria-label="Mobile" className="mt-6 flex flex-col gap-1">
@@ -118,8 +122,8 @@ export function Navbar() {
                       aria-current={isActive ? "true" : undefined}
                       className={`inline-flex min-h-[44px] items-center rounded-md px-2 text-base transition-colors ${
                         isActive
-                          ? "bg-muted font-medium text-foreground"
-                          : "text-foreground hover:bg-muted"
+                          ? "bg-accent-muted text-accent font-medium"
+                          : "text-foreground hover:bg-surface-1"
                       }`}
                     >
                       {item.label}

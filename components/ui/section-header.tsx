@@ -15,7 +15,7 @@ export function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <div className="flex flex-col gap-3">
-      <Badge variant="outline" className="w-fit">
+      <Badge variant="accent" className="w-fit">
         {eyebrow}
       </Badge>
       <h2

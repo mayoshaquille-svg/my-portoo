@@ -4,10 +4,10 @@ import { site } from "@/lib/constants";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const ledgerRows = [
-  { status: "Open", badgeVariant: "default" as const, time: "09:14" },
-  { status: "In Progress", badgeVariant: "outline" as const, time: "09:32" },
-  { status: "Resolved", badgeVariant: "default" as const, time: "10:05" },
+const telemetry = [
+  { label: "Systems supported", value: "3" },
+  { label: "Active domains", value: "4" },
+  { label: "Status", value: "Operational" },
 ];
 
 export function Hero() {
@@ -20,8 +20,8 @@ export function Hero() {
         <div className="grid items-start gap-12 lg:grid-cols-5 lg:gap-16">
           {/* Left: thesis */}
           <div className="flex flex-col gap-6 lg:col-span-3">
-            <Badge variant="outline" className="w-fit">
-              IT Support / Open to work · {site.location}
+            <Badge variant="accent" className="w-fit">
+              IT Support · Open to work · {site.location}
             </Badge>
             <h1
               id="hero-heading"
@@ -50,28 +50,34 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right: ticket ledger strip */}
+          {/* Right: telemetry card */}
           <div
             role="group"
-            aria-label="Example support ticket flow"
+            aria-label="Portfolio metrics"
             className="lg:col-span-2"
           >
-            <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-widest text-subtle">
-              Ticket ledger
-            </p>
-            <div className="flex flex-col gap-2">
-              {ledgerRows.map((row, i) => (
-                <div
-                  key={row.status}
-                  className="hero-ledger-row flex items-center justify-between rounded-md border border-border bg-background px-4 py-2.5 transition-colors hover:bg-muted"
-                  style={{ animationDelay: `${i * 250}ms` }}
-                >
-                  <Badge variant={row.badgeVariant}>{row.status}</Badge>
-                  <span className="font-mono text-xs text-subtle">
-                    {row.time}
-                  </span>
-                </div>
-              ))}
+            <div className="rounded-md border border-border bg-surface-0 p-5 console-glow">
+              <div className="flex items-center gap-2 border-b border-border pb-3 mb-4">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+                <p className="font-mono text-[11px] font-semibold uppercase tracking-widest text-subtle">
+                  Telemetry
+                </p>
+              </div>
+              <dl className="flex flex-col gap-3">
+                {telemetry.map((item, i) => (
+                  <div
+                    key={item.label}
+                    className={`reveal reveal-delay-${i + 1} flex items-baseline justify-between`}
+                  >
+                    <dt className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+                      {item.label}
+                    </dt>
+                    <dd className="font-mono text-sm font-semibold text-foreground">
+                      {item.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
         </div>

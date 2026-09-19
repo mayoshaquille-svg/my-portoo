@@ -1,5 +1,4 @@
-import {
-  ArrowRight,
+﻿import {
   ClipboardCheck,
   Crosshair,
   Database,
@@ -77,44 +76,47 @@ export function Capabilities() {
     <section
       id="capabilities"
       aria-labelledby="capabilities-heading"
-      className="scroll-mt-24 bg-muted py-12 sm:py-16"
+      className="scroll-mt-24 bg-surface-1 py-12 sm:py-16"
     >
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         <SectionHeader
           id="capabilities-heading"
-          eyebrow="02 · Capabilities"
+          eyebrow="02 \u00b7 Capabilities"
           title="Capabilities"
           description="What I can own end to end, from ticket to fix to documentation."
         />
 
-        {/* Troubleshooting flow — full-width horizontal statement */}
+        {/* Troubleshooting flow -- horizontal rail */}
         <div className="mt-8" role="group" aria-label="Troubleshooting flow">
-          <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-subtle">
-            Troubleshooting flow
-          </h3>
+          <div className="flex items-center gap-2 mb-4">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+            <h3 className="font-mono text-[11px] font-semibold uppercase tracking-widest text-subtle">
+              Troubleshooting flow
+            </h3>
+          </div>
           <ol
             aria-label="Six-step troubleshooting process"
-            className="relative mt-4 grid list-none grid-cols-2 gap-4 p-0 sm:grid-cols-3 lg:grid-cols-6"
+            className="relative grid list-none grid-cols-2 gap-3 p-0 sm:grid-cols-3 lg:grid-cols-6"
           >
             {troubleshootingFlow.map((item, index) => (
               <li key={item.step} className="relative flex flex-col">
-                {/* Connector line (CSS only, hidden on mobile for clean stacking) */}
+                {/* Connector line */}
                 {index < troubleshootingFlow.length - 1 && (
                   <div
                     aria-hidden="true"
-                    className="absolute right-0 top-4 hidden h-px w-[calc(100%-2rem)] bg-border lg:block"
+                    className="absolute right-0 top-4 hidden h-px w-[calc(100%-2rem)] bg-border-accent/30 lg:block"
                     style={{ left: "calc(50% + 1.5rem)" }}
                   />
                 )}
-                <div className="rounded-md border border-border bg-background p-4">
+                <div className="rounded-md border border-border bg-surface-0 p-4 console-glow">
                   <div className="flex items-center gap-2">
-                    <item.Icon className="h-4 w-4" aria-hidden="true" />
-                    <p className="font-mono text-xs text-subtle">
+                    <item.Icon className="h-4 w-4 text-accent" aria-hidden="true" />
+                    <p className="font-mono text-[10px] text-subtle">
                       Step {index + 1}
                     </p>
                   </div>
                   <p className="mt-2 text-sm font-medium">{item.step}</p>
-                  <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                  <p className="mt-1 text-xs leading-5 text-muted-foreground">
                     {item.description}
                   </p>
                 </div>
@@ -124,7 +126,7 @@ export function Capabilities() {
         </div>
 
         {/* Mid-page mini-CTA */}
-        <div className="mt-8 flex flex-col items-start gap-3 rounded-md border border-border bg-background px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col items-start gap-3 rounded-md border border-border bg-surface-0 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted-foreground">
             Punya masalah sistem? Saya bisa bantu diagnosa dan perbaiki.
           </p>
@@ -132,20 +134,20 @@ export function Capabilities() {
             <Button asChild variant="outline" size="sm">
               <a href="#contact">
                 Hubungi
-                <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                <span className="h-3.5 w-3.5" aria-hidden="true">&rarr;</span>
               </a>
             </Button>
           </div>
         </div>
 
-        {/* Capability groups */}
+        {/* Capability groups -- matrix */}
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {groups.map((group) => (
             <div
               key={group}
-              className="rounded-md border border-border bg-background p-5"
+              className="rounded-md border border-border bg-surface-0 p-5"
             >
-              <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-subtle">
+              <h3 className="font-mono text-[11px] font-semibold uppercase tracking-widest text-subtle">
                 {group}
               </h3>
               <ul className="mt-3 flex list-none flex-col gap-4 p-0">
@@ -156,7 +158,7 @@ export function Capabilities() {
                     return (
                       <li key={cap.title} className="flex gap-3">
                         <Icon
-                          className="mt-0.5 h-5 w-5 shrink-0"
+                          className="mt-0.5 h-5 w-5 shrink-0 text-accent"
                           aria-hidden="true"
                         />
                         <div>

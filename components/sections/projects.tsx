@@ -1,4 +1,4 @@
-import { CircleCheck, Construction, Monitor } from "lucide-react";
+﻿import { CircleCheck, Construction, Monitor } from "lucide-react";
 
 import { projects } from "@/lib/data/projects";
 import type { ProjectStatus } from "@/types/project";
@@ -24,7 +24,7 @@ export function Projects() {
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         <SectionHeader
           id="projects-heading"
-          eyebrow="03 · Supported Systems"
+          eyebrow="03 \u00b7 Supported Systems"
           title="Supported Systems"
           description="Systems I support and maintain: the issue context, how each system is kept running, and the support role behind it."
         />
@@ -38,7 +38,7 @@ export function Projects() {
             return (
               <article
                 key={project.slug}
-                className="rounded-md border border-border bg-background p-6 sm:p-8"
+                className="rounded-md border border-border bg-surface-0 p-6 sm:p-8"
               >
                 <div className="grid gap-8 sm:grid-cols-12 sm:items-start">
                   {/* Narrative column */}
@@ -49,7 +49,7 @@ export function Projects() {
                   >
                     <div className="flex flex-wrap items-center gap-2 mb-3">
                       <Badge variant="outline">{project.year}</Badge>
-                      <Badge>
+                      <Badge variant="accent">
                         <status.Icon
                           className="h-3.5 w-3.5"
                           aria-hidden="true"
@@ -60,7 +60,7 @@ export function Projects() {
 
                     <h3 className="flex items-start gap-2 text-lg font-semibold leading-6">
                       <Monitor
-                        className="mt-1 h-4 w-4 shrink-0 text-muted-foreground"
+                        className="mt-1 h-4 w-4 shrink-0 text-accent"
                         aria-hidden="true"
                       />
                       <span>
@@ -75,7 +75,7 @@ export function Projects() {
 
                     <div role="group" aria-label="Support details" className="mt-5 grid gap-4 sm:grid-cols-2">
                       <div>
-                        <h4 className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">
+                        <h4 className="font-mono text-[11px] font-semibold uppercase tracking-widest text-foreground">
                           Problem
                         </h4>
                         <p className="mt-1 text-sm leading-6">
@@ -83,7 +83,7 @@ export function Projects() {
                         </p>
                       </div>
                       <div>
-                        <h4 className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">
+                        <h4 className="font-mono text-[11px] font-semibold uppercase tracking-widest text-foreground">
                           Solution
                         </h4>
                         <p className="mt-1 text-sm leading-6">
@@ -93,15 +93,15 @@ export function Projects() {
                     </div>
                   </div>
 
-                  {/* Specs column */}
+                  {/* Specs column -- elevated surface */}
                   <div
                     className={`sm:col-span-5 sm:border-l sm:border-border sm:pl-6 ${
                       isReversed ? "sm:order-1" : "sm:order-2"
                     }`}
                   >
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 rounded-md border border-border bg-surface-1 p-5">
                       <div>
-                        <h4 className="font-mono text-xs font-semibold uppercase tracking-widest text-subtle">
+                        <h4 className="font-mono text-[11px] font-semibold uppercase tracking-widest text-subtle">
                           Architecture
                         </h4>
                         <p className="mt-1 text-sm leading-6 text-muted-foreground">
@@ -110,7 +110,7 @@ export function Projects() {
                       </div>
 
                       <div>
-                        <h4 className="font-mono text-xs font-semibold uppercase tracking-widest text-subtle">
+                        <h4 className="font-mono text-[11px] font-semibold uppercase tracking-widest text-subtle">
                           Technical decisions
                         </h4>
                         <ul className="mt-1.5 flex list-disc flex-col gap-1 pl-5 text-sm leading-6 text-muted-foreground">
@@ -121,7 +121,7 @@ export function Projects() {
                       </div>
 
                       <div>
-                        <h4 className="font-mono text-xs font-semibold uppercase tracking-widest text-subtle">
+                        <h4 className="font-mono text-[11px] font-semibold uppercase tracking-widest text-subtle">
                           Role
                         </h4>
                         <ul className="mt-1.5 flex list-disc flex-col gap-1 pl-5 text-sm leading-6 text-muted-foreground">
@@ -132,7 +132,7 @@ export function Projects() {
                       </div>
 
                       <div>
-                        <h4 className="font-mono text-xs font-semibold uppercase tracking-widest text-subtle">
+                        <h4 className="font-mono text-[11px] font-semibold uppercase tracking-widest text-subtle">
                           Challenges
                         </h4>
                         <ul className="mt-1.5 flex list-disc flex-col gap-1 pl-5 text-sm leading-6 text-muted-foreground">

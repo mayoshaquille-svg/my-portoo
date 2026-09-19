@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail } from "lucide-react";
+﻿import { ArrowUpRight, Mail } from "lucide-react";
 
 import { site } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -23,12 +23,12 @@ export function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="scroll-mt-24 bg-muted py-12 sm:py-16"
+      className="scroll-mt-24 bg-surface-1 py-12 sm:py-16"
     >
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         <SectionHeader
           id="contact-heading"
-          eyebrow="06 · Contact"
+          eyebrow="06 \u00b7 Contact"
           title="Contact"
           description="Fastest response via email. Include context, screenshots, and urgency."
         />
@@ -36,8 +36,8 @@ export function Contact() {
         {/* 2-column bento: direct connect + social */}
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {/* Direct contact card */}
-          <div className="rounded-md border border-border bg-background p-6">
-            <p className="font-mono text-xs font-semibold uppercase tracking-widest text-subtle">
+          <div className="rounded-md border border-border bg-surface-0 p-6 console-glow">
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-widest text-subtle">
               Direct
             </p>
             <h3 className="mt-3 text-lg font-semibold text-foreground">
@@ -56,8 +56,8 @@ export function Contact() {
           </div>
 
           {/* Social card */}
-          <div className="rounded-md border border-border bg-background p-6">
-            <p className="font-mono text-xs font-semibold uppercase tracking-widest text-subtle">
+          <div className="rounded-md border border-border bg-surface-0 p-6">
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-widest text-subtle">
               Connect
             </p>
             <h3 className="mt-3 text-lg font-semibold text-foreground">
@@ -74,7 +74,7 @@ export function Contact() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center gap-2.5 rounded-md border border-border bg-background px-4 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  className="inline-flex min-h-[44px] items-center gap-2.5 rounded-md border border-border bg-surface-1 px-4 text-sm text-muted-foreground transition-colors hover:bg-surface-2 hover:text-foreground"
                 >
                   <Icon size={16} />
                   <span>{label}</span>
