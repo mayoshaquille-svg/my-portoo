@@ -18,14 +18,14 @@ export const capabilities: Capability[] = [
   {
     title: "Application Support",
     description:
-      "Support and maintain internal Laravel/MySQL business systems, including user assistance and issue handling.",
+      "Support internal applications through user assistance, issue handling, and routine maintenance.",
     icon: "MonitorCog",
     group: "Systems",
   },
   {
     title: "Data and Reporting Support",
     description:
-      "MySQL data checks, validation, and reporting views matched to office workflows.",
+      "Data checks, validation, and reporting support matched to office workflows.",
     icon: "Database",
     group: "Systems",
   },

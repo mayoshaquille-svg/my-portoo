@@ -34,7 +34,6 @@ export const metadata: Metadata = {
     "application support",
     "infrastructure support",
     "documentation",
-    "MySQL",
     "Riau",
   ],
   authors: [{ name: site.name }],

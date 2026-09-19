@@ -10,7 +10,7 @@ const facts = [
   },
   {
     key: "Systems",
-    value: "Office systems, Laravel/MySQL business apps, local network",
+    value: "Office systems, internal applications, local network",
   },
   { key: "Base", value: "Riau, Indonesia" },
 ] as const;
@@ -25,7 +25,7 @@ const pillars = [
   {
     title: "Applications",
     description:
-      "Internal Laravel/MySQL business systems, user assistance and issue handling.",
+      "Internal applications, user assistance, issue handling, and routine maintenance.",
     Icon: MonitorCog,
   },
   {
@@ -66,9 +66,8 @@ export function About() {
             <p className="text-sm leading-7 text-muted-foreground">
               IT Support specialist focused on troubleshooting, user support,
               system maintenance, application support, infrastructure support,
-              and documentation. Familiarity with Laravel/MySQL systems helps me
-              diagnose issues faster -- supporting the system is the job, not
-              showcasing builds.
+              and documentation. Experience supporting internal systems helps me
+              diagnose issues faster -- keeping the system working is the job.
             </p>
             <div className="mt-5 pt-4 border-t border-border">
               <p className="font-mono text-[11px] text-subtle">
