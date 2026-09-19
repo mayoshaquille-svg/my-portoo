@@ -82,3 +82,20 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Hero ledger — stagger reveal */
+@keyframes ledger-row-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-ledger-row {
+  opacity: 0;
+  animation: ledger-row-in 0.25s ease-out forwards;
+}
