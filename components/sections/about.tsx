@@ -66,13 +66,14 @@ export function About() {
             <p className="text-sm leading-7 text-muted-foreground">
               IT Support specialist focused on troubleshooting, user support,
               system maintenance, application support, infrastructure support,
-              and documentation. Experience supporting internal systems helps me
-              diagnose issues faster -- keeping the system working is the job.
+              and documentation. Experience from IT support internships helps me
+              diagnose issues faster -- troubleshooting and clear documentation
+              are the job.
             </p>
             <div className="mt-5 pt-4 border-t border-border">
               <p className="font-mono text-[11px] text-subtle">
-                {site.location} -- providing support, maintenance, and
-                documentation for office systems and internal applications.
+                {site.location} -- open to work in IT support, troubleshooting,
+                and system maintenance.
               </p>
             </div>
           </div>

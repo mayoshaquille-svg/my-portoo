@@ -5,16 +5,16 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Typewriter } from "@/components/ui/typewriter";
 
-const telemetry = [
-  { label: "Support areas", value: "03" },
-  { label: "Response mode", value: "Hands-on" },
-  { label: "Status", value: "Operational" },
+const availability = [
+  { label: "Availability", value: "Open to work" },
+  { label: "Base", value: "Riau, Indonesia" },
+  { label: "Focus", value: "IT Support" },
 ];
 
 const supportSignals = [
   "Ready to troubleshoot",
+  "User support first",
   "Clear fixes, documented",
-  "Systems kept moving",
 ] as const;
 
 export function Hero() {
@@ -37,9 +37,8 @@ export function Hero() {
               {site.name} — {site.role}
             </h1>
             <p className="reveal reveal-delay-3 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              Keeping office systems running — troubleshooting issues,
-              maintaining applications, and documenting fixes so teams can focus
-              on their work.
+              IT Support focused on troubleshooting issues, maintaining
+              systems, and documenting fixes so teams can focus on their work.
             </p>
             <p className="reveal reveal-delay-3 flex min-h-6 items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
@@ -61,21 +60,21 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right: telemetry card */}
+          {/* Right: availability card */}
           <div
             role="group"
-            aria-label="Portfolio metrics"
+            aria-label="Availability"
             className="lg:col-span-2"
           >
             <div className="rounded-md border border-border bg-surface-0 p-5 console-glow">
               <div className="flex items-center gap-2 border-b border-border pb-3 mb-4">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
                 <p className="font-mono text-[11px] font-semibold uppercase tracking-widest text-subtle">
-                  Telemetry
+                  Availability
                 </p>
               </div>
               <dl className="flex flex-col gap-3">
-                {telemetry.map((item, i) => (
+                {availability.map((item, i) => (
                   <div
                     key={item.label}
                     className={`reveal reveal-delay-${i + 1} flex items-baseline justify-between`}

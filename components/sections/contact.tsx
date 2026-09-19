@@ -15,7 +15,7 @@ export function Contact() {
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         <SectionHeader
           id="contact-heading"
-          eyebrow="06 \u00b7 Contact"
+          eyebrow="05 · Contact"
           title="Contact"
           description="Fastest response via email. Include context, screenshots, and urgency."
         />

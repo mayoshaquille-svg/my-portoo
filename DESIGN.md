@@ -57,7 +57,6 @@ Three surface layers, not flat borders:
 | Hero | `bg-background` | Telemetry card with console-glow | Split 3/5 + 2/5 |
 | About | `bg-background` | Bento 8/4 + left-accent pillars | Grid 12-col |
 | Capabilities | `bg-surface-1` | Flow rail + matrix cards, accent icons | Full-width flow + 2-col grid |
-| Projects | `bg-background` | Editorial alternating 7/5 with elevated spec column | Stack of 12-col articles |
 | Skills | `bg-surface-1` | Ledger card, dot indicators, accent category icons | Single card, 2-col inner grid |
 | Experience | `bg-background` | Timeline with accent rail + alternating nodes | Center-rail timeline |
 | Contact | `bg-surface-1` | Split bento, console-glow on email | 2-col grid |

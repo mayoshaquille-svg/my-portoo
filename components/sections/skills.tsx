@@ -20,7 +20,7 @@ export function Skills() {
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         <SectionHeader
           id="skills-heading"
-          eyebrow="04 \u00b7 Skills"
+          eyebrow="03 · Skills"
           title="Skills"
           description="Grouped by support domain. No ratings, only areas of working experience."
         />

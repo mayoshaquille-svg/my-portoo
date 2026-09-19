@@ -18,7 +18,7 @@ export const capabilities: Capability[] = [
   {
     title: "Application Support",
     description:
-      "Support internal applications through user assistance, issue handling, and routine maintenance.",
+      "Able to support internal applications through user assistance, issue handling, and routine maintenance.",
     icon: "MonitorCog",
     group: "Systems",
   },

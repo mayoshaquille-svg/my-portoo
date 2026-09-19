@@ -1,4 +1,5 @@
 ﻿import {
+  ArrowRight,
   ClipboardCheck,
   Crosshair,
   Database,
@@ -83,7 +84,7 @@ export function Capabilities() {
           id="capabilities-heading"
           eyebrow="02 \u00b7 Capabilities"
           title="Capabilities"
-          description="What I can own end to end, from ticket to fix to documentation."
+          description="How I work through issues, from ticket to fix to documentation."
         />
 
         {/* Troubleshooting flow -- horizontal rail */}
@@ -128,13 +129,13 @@ export function Capabilities() {
         {/* Mid-page mini-CTA */}
         <div className="mt-8 flex flex-col items-start gap-3 rounded-md border border-border bg-surface-0 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted-foreground">
-            Punya masalah sistem? Saya bisa bantu diagnosa dan perbaiki.
+            Have a system issue? I can help diagnose and fix it.
           </p>
           <div className="flex items-center gap-3">
             <Button asChild variant="outline" size="sm">
               <a href="#contact">
-                Hubungi
-                <span className="h-3.5 w-3.5" aria-hidden="true">&rarr;</span>
+                Contact
+                <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
               </a>
             </Button>
           </div>

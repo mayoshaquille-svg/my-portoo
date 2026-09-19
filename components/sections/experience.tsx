@@ -56,7 +56,7 @@ export function Experience() {
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         <SectionHeader
           id="experience-heading"
-          eyebrow="05 · Experience"
+          eyebrow="04 · Experience"
           title="Experience"
           description="Support roles across field operations, events, and network services."
         />
