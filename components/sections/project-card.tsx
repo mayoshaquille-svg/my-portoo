@@ -39,42 +39,46 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.context}
       </p>
 
-      <div className="flex flex-col gap-3">
+      {/* Primary info: always visible */}
+      <div role="group" aria-label="Support details" className="flex flex-col gap-3">
         <div>
-          <h4 className="font-mono text-xs uppercase tracking-widest text-subtle">
+          <h4 className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">
             Problem
           </h4>
           <p className="mt-1 text-sm leading-6">{project.problem}</p>
         </div>
         <div>
-          <h4 className="font-mono text-xs uppercase tracking-widest text-subtle">
+          <h4 className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">
             Solution
           </h4>
           <p className="mt-1 text-sm leading-6">{project.solution}</p>
         </div>
-        <div>
-          <h4 className="font-mono text-xs uppercase tracking-widest text-subtle">
-            Architecture
-          </h4>
-          <p className="mt-1 text-sm leading-6 text-muted-foreground">
-            {project.architecture}
-          </p>
-        </div>
       </div>
 
-      <div>
-        <h4 className="font-mono text-xs uppercase tracking-widest text-subtle">
+      {/* Secondary info: collapsible */}
+      <details className="group flex flex-col gap-3">
+        <summary className="cursor-pointer font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 [&::-webkit-details-marker]:hidden">
+          Architecture
+        </summary>
+        <p className="text-sm leading-6 text-muted-foreground">
+          {project.architecture}
+        </p>
+      </details>
+
+      <details className="group flex flex-col gap-3">
+        <summary className="cursor-pointer font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 [&::-webkit-details-marker]:hidden">
           Technical decisions
-        </h4>
-        <ul className="mt-1.5 flex list-disc flex-col gap-1 pl-5 text-sm leading-6 text-muted-foreground">
+        </summary>
+        <ul className="flex list-disc flex-col gap-1 pl-5 text-sm leading-6 text-muted-foreground">
           {project.technicalDecisions.map((decision) => (
             <li key={decision}>{decision}</li>
           ))}
         </ul>
-      </div>
+      </details>
 
+      {/* Role: always visible — primary for hiring */}
       <div>
-        <h4 className="font-mono text-xs uppercase tracking-widest text-subtle">
+        <h4 className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">
           Role
         </h4>
         <ul className="mt-1.5 flex list-disc flex-col gap-1 pl-5 text-sm leading-6 text-muted-foreground">
@@ -84,16 +88,16 @@ export function ProjectCard({ project }: { project: Project }) {
         </ul>
       </div>
 
-      <div>
-        <h4 className="font-mono text-xs uppercase tracking-widest text-subtle">
+      <details className="group flex flex-col gap-3">
+        <summary className="cursor-pointer font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 [&::-webkit-details-marker]:hidden">
           Challenges
-        </h4>
-        <ul className="mt-1.5 flex list-disc flex-col gap-1 pl-5 text-sm leading-6 text-muted-foreground">
+        </summary>
+        <ul className="flex list-disc flex-col gap-1 pl-5 text-sm leading-6 text-muted-foreground">
           {project.challenges.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
-      </div>
+      </details>
 
       <div className="mt-auto flex flex-col gap-3 pt-2">
         <div

@@ -11,7 +11,8 @@
   --border: #cccccc;
   --muted: #f5f5f5;
   --muted-foreground: #666666;
-  --subtle: #737373;
+  /* TODO: replace with production site.url */
+  --subtle: #727272; /* AA on #f5f5f5: 4.51:1 */
   --radius: 0.375rem;
 }
 
@@ -23,7 +24,8 @@
   --border: #333333;
   --muted: #1a1a1a;
   --muted-foreground: #a3a3a3;
-  --subtle: #737373;
+  /* TODO: replace with production site.url */
+  --subtle: #8e8e8e; /* AA on #1a1a1a: 4.52:1 */
 }
 
 @theme inline {

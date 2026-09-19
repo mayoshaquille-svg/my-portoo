@@ -39,6 +39,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: site.name }],
   creator: site.name,
+  // TODO: replace site.url with production domain before deploy
   metadataBase: new URL(site.url),
   alternates: {
     canonical: "/",
@@ -55,6 +56,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
+        // TODO: replace /og.svg with raster OG image (1200x630 png/jpg) for broader social-media compatibility
         url: "/og.svg",
         width: 1200,
         height: 630,
@@ -63,7 +65,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: site.title,
     description: site.description,
     images: ["/og.svg"],

@@ -17,7 +17,7 @@ export function Skills() {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="scroll-mt-20 bg-muted py-12 sm:py-16"
+      className="scroll-mt-24 bg-muted py-12 sm:py-16"
     >
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         <SectionHeader

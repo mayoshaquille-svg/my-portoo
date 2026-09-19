@@ -17,6 +17,40 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
+  const [activeId, setActiveId] = React.useState<string>("");
+
+  React.useEffect(() => {
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    const sectionIds = nav.map((item) => item.href.replace("#", ""));
+    const elements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        }
+      },
+      {
+        rootMargin: "-80px 0px -60% 0px",
+        threshold: prefersReduced ? 1 : 0,
+      },
+    );
+
+    for (const el of elements) {
+      observer.observe(el);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background">
@@ -33,15 +67,23 @@ export function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="inline-flex min-h-[44px] items-center rounded-md px-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {nav.map((item) => {
+            const isActive = activeId === item.href.replace("#", "");
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={isActive ? "true" : undefined}
+                className={`inline-flex min-h-[44px] items-center rounded-md px-3 text-sm transition-colors focus-visible:outline-2 ${
+                  isActive
+                    ? "border-b-2 border-foreground font-medium text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
           <ThemeToggle />
         </div>
 
@@ -66,16 +108,24 @@ export function Navbar() {
                 </SheetTitle>
               </SheetHeader>
               <nav aria-label="Mobile" className="mt-6 flex flex-col gap-1">
-                {nav.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="inline-flex min-h-[44px] items-center rounded-md px-2 text-base text-foreground hover:bg-muted"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {nav.map((item) => {
+                  const isActive = activeId === item.href.replace("#", "");
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      aria-current={isActive ? "true" : undefined}
+                      className={`inline-flex min-h-[44px] items-center rounded-md px-2 text-base transition-colors ${
+                        isActive
+                          ? "bg-muted font-medium text-foreground"
+                          : "text-foreground hover:bg-muted"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
               </nav>
             </SheetContent>
           </Sheet>

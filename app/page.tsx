@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main id="main" className="flex flex-1 flex-col overflow-x-clip">
       <Hero />
-      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
+      <div className="mx-auto w-full px-4 sm:px-6">
         <Separator />
       </div>
       <About />

@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "title": "Mayo — IT Support Portfolio",
+    "palette": "monochrome",
+    "elevation": "flat-tonal",
+    "radius": "0.375rem",
+    "containerMax": "64rem",
+    "breakpoints": [640, 768, 1024]
+  },
+  "colors": {
+    "light": {
+      "background": "#ffffff",
+      "foreground": "#000000",
+      "primary": "#000000",
+      "primary-foreground": "#ffffff",
+      "border": "#cccccc",
+      "muted": "#f5f5f5",
+      "muted-foreground": "#666666",
+      "subtle": "#737373"
+    },
+    "dark": {
+      "background": "#000000",
+      "foreground": "#ffffff",
+      "primary": "#ffffff",
+      "primary-foreground": "#000000",
+      "border": "#333333",
+      "muted": "#1a1a1a",
+      "muted-foreground": "#a3a3a3",
+      "subtle": "#737373"
+    },
+    "rules": {
+      "accent": null,
+      "note": "Strictly achromatic. No chromatic hue anywhere."
+    }
+  },
+  "typography": {
+    "sans": {
+      "font": "Inter",
+      "fallback": "ui-sans-serif, system-ui, sans-serif",
+      "roles": ["body", "headings", "buttons", "links", "descriptions"]
+    },
+    "mono": {
+      "font": "JetBrains Mono",
+      "fallback": "monospace",
+      "roles": ["labels", "badges", "eyebrows", "timestamps", "sheet-titles"]
+    },
+    "scale": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem"
+    },
+    "treatments": {
+      "heading": "font-semibold tracking-tight",
+      "eyebrow": "font-mono text-xs uppercase tracking-widest",
+      "body": "text-sm leading-6",
+      "body-relaxed": "text-base leading-7",
+      "badge": "font-mono text-xs font-medium"
+    }
+  },
+  "layout": {
+    "container": {
+      "max": "max-w-5xl",
+      "padding": { "base": "px-4", "sm": "sm:px-6" },
+      "center": "mx-auto w-full"
+    },
+    "grids": {
+      "1col": "grid grid-cols-1",
+      "2col": "sm:grid-cols-2",
+      "3col": "lg:grid-cols-3",
+      "gap": "gap-4"
+    },
+    "sectionPadding": {
+      "default": "py-12 sm:py-16",
+      "hero": "py-16 sm:py-24"
+    },
+    "alternatingSections": ["capabilities", "skills", "contact"]
+  },
+  "elevation": {
+    "page": "solid background",
+    "sections": "tonal shift via bg-muted",
+    "cards": "border border-border bg-background",
+    "sheet-overlay": "bg-black/60",
+    "sheet-panel": "shadow-lg",
+    "navbar": "sticky top-0 border-b border-border",
+    "zIndex": {
+      "navbar": 40,
+      "sheet": 50
+    },
+    "note": "Flat by design. Only the sheet panel has a shadow."
+  },
+  "shapes": {
+    "radius": {
+      "card": "rounded-md",
+      "button": "rounded-md",
+      "badge": "rounded-full",
+      "sheet-close": "rounded-md",
+      "value": "0.375rem"
+    },
+    "border": {
+      "weight": "1px",
+      "style": "solid",
+      "color": "var(--border)"
+    }
+  },
+  "components": [
+    {
+      "name": "Button",
+      "file": "components/ui/button.tsx",
+      "variants": ["default", "secondary", "outline", "ghost"],
+      "sizes": ["default", "sm", "lg", "icon"],
+      "hover": "opacity-shift (default/secondary), bg-muted (outline/ghost)",
+      "focus": "focus-visible:outline-2 outline-offset-2",
+      "touchTarget": "min-h-[44px] on nav/footer links"
+    },
+    {
+      "name": "Badge",
+      "file": "components/ui/badge.tsx",
+      "variants": ["default", "outline"],
+      "shape": "rounded-full",
+      "font": "font-mono text-xs font-medium",
+      "usage": ["section eyebrows", "tech tags", "status indicators", "hero label"]
+    },
+    {
+      "name": "Card",
+      "pattern": "ad-hoc",
+      "classes": "rounded-md border border-border bg-background p-4 sm:p-5",
+      "hover": "none",
+      "usage": ["About facts", "capability groups", "project cards", "experience items", "troubleshooting steps"]
+    },
+    {
+      "name": "SectionHeader",
+      "file": "components/ui/section-header.tsx",
+      "structure": ["Badge (eyebrow)", "h2 title", "optional description"],
+      "spacing": "gap-3 between elements, mt-6 below"
+    },
+    {
+      "name": "Navbar",
+      "file": "components/layout/navbar.tsx",
+      "position": "sticky top-0 z-40",
+      "height": "h-16",
+      "border": "border-b border-border",
+      "desktop": "horizontal links, md:flex",
+      "mobile": "Sheet drawer, ghost icon trigger",
+      "logoFont": "font-mono text-sm font-semibold uppercase tracking-widest"
+    },
+    {
+      "name": "Sheet",
+      "file": "components/ui/sheet.tsx",
+      "overlay": "bg-black/60",
+      "panel": "right side, w-3/4 max-w-sm, border-l border-border, shadow-lg",
+      "title": "font-mono text-sm uppercase tracking-widest",
+      "closeButton": "ghost icon, h-11 w-11"
+    },
+    {
+      "name": "Separator",
+      "file": "components/ui/separator.tsx",
+      "horizontal": "h-px w-full bg-border",
+      "vertical": "h-full w-px bg-border",
+      "decorative": true
+    },
+    {
+      "name": "ThemeToggle",
+      "file": "components/theme-toggle.tsx",
+      "variant": "ghost icon button",
+      "icons": ["Sun", "Moon"],
+      "library": "next-themes"
+    },
+    {
+      "name": "ProjectCard",
+      "file": "components/sections/project-card.tsx",
+      "structure": ["badges (year + status)", "title with icon", "context", "problem/solution/architecture", "technical decisions", "role", "challenges", "tech tags"],
+      "badgeUsage": "heavy — year, status, each technology"
+    },
+    {
+      "name": "ExperienceItem",
+      "pattern": "ad-hoc",
+      "structure": ["role + company", "period", "dl grid (action/system/contribution/result)"],
+      "grid": "sm:grid-cols-2 for field pairs"
+    }
+  ],
+  "accessibility": {
+    "focusVisible": "2px solid var(--foreground), offset 2px",
+    "selection": "background: var(--foreground), color: var(--background)",
+    "reducedMotion": "disables all animations/transitions",
+    "touchTargets": "min-h-[44px] on all interactive elements",
+    "ariaLabels": ["Open menu", "Close menu", "Email", "LinkedIn", "GitHub"],
+    "semanticLandmarks": ["header > nav[aria-label=Primary]", "main#main", "footer", "section[aria-labelledby]"],
+    "skipLink": "#main"
+  },
+  "motion": {
+    "scrollBehavior": "smooth",
+    "reducedMotion": "prefers-reduced-motion: reduce disables all",
+    "animations": "none currently — intentionally static",
+    "transitions": "transition-colors on nav links, hover states"
+  }
+}
