@@ -12,6 +12,4 @@ export const skills: Skill[] = [
   { name: "Network Basics", category: "Infrastructure" },
   { name: "Hardware Maintenance", category: "Infrastructure" },
   { name: "Preventive Maintenance", category: "Infrastructure" },
-  { name: "PHP / Laravel", category: "Tools" },
-  { name: "Git", category: "Tools" },
 ];

@@ -2,7 +2,7 @@
 
 import { site } from "@/lib/constants";
 import { Separator } from "@/components/ui/separator";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
+import { LinkedinIcon } from "@/components/ui/brand-icons";
 
 export function Footer() {
   return (
@@ -35,15 +35,6 @@ export function Footer() {
               className="inline-flex min-h-[44px] w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-surface-1 hover:text-foreground"
             >
               <LinkedinIcon size={16} />
-            </a>
-            <a
-              href={site.github}
-              aria-label="GitHub (opens in new tab)"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-[44px] w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-surface-1 hover:text-foreground"
-            >
-              <GithubIcon size={16} />
             </a>
           </nav>
         </div>

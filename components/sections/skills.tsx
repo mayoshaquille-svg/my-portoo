@@ -1,14 +1,13 @@
-﻿import { Headset, MonitorCog, Network, Wrench } from "lucide-react";
+﻿import { Headset, MonitorCog, Network } from "lucide-react";
 
 import { skills } from "@/lib/data/skills";
 import type { SkillDomain } from "@/types/skill";
 import { SectionHeader } from "@/components/ui/section-header";
 
-const domains: { name: SkillDomain; Icon: typeof Wrench }[] = [
+const domains: { name: SkillDomain; Icon: typeof Headset }[] = [
   { name: "IT Support", Icon: Headset },
   { name: "Systems", Icon: MonitorCog },
   { name: "Infrastructure", Icon: Network },
-  { name: "Tools", Icon: Wrench },
 ];
 
 export function Skills() {

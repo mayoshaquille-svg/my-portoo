@@ -4,20 +4,16 @@ export interface NavItem {
 }
 
 export const site = {
-  name: "Mayo",
+  name: "M. Mayo Shaquille",
   role: "IT Support",
-  title: "Mayo — IT Support",
+  title: "M. Mayo Shaquille — IT Support",
   description:
-    "Mayo is an IT Support specialist focused on troubleshooting, user support, system maintenance, application support, infrastructure support, and documentation.",
+    "M. Mayo Shaquille is an IT Support specialist focused on troubleshooting, user support, system maintenance, application support, infrastructure support, and documentation.",
   // TODO: replace with production domain
   url: "https://example.com",
-  // TODO: replace with real email address
-  email: "mailto:hello@example.com",
-  emailLabel: "hello@example.com",
-  // TODO: replace with real LinkedIn profile URL
-  linkedin: "https://www.linkedin.com/",
-  // TODO: replace with real GitHub profile URL
-  github: "https://github.com/",
+  email: "mailto:mayoshaquille@gmail.com",
+  emailLabel: "mayoshaquille@gmail.com",
+  linkedin: "https://www.linkedin.com/in/m-mayo-shaquille-69953041b",
   location: "Riau, Indonesia",
 } as const;
 

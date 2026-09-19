@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const telemetry = [
   { label: "Systems supported", value: "3" },
-  { label: "Active domains", value: "4" },
+  { label: "Active domains", value: "3" },
   { label: "Status", value: "Operational" },
 ];
 

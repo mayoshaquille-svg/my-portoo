@@ -3,20 +3,7 @@
 import { site } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/ui/section-header";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
-
-const externals = [
-  {
-    label: "LinkedIn",
-    href: site.linkedin,
-    Icon: LinkedinIcon,
-  },
-  {
-    label: "GitHub",
-    href: site.github,
-    Icon: GithubIcon,
-  },
-] as const;
+import { LinkedinIcon } from "@/components/ui/brand-icons";
 
 export function Contact() {
   return (
@@ -68,22 +55,19 @@ export function Contact() {
               support inquiries.
             </p>
             <div className="mt-5 flex flex-col gap-2">
-              {externals.map(({ label, href, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center gap-2.5 rounded-md border border-border bg-surface-1 px-4 text-sm text-muted-foreground transition-colors hover:bg-surface-2 hover:text-foreground"
-                >
-                  <Icon size={16} />
-                  <span>{label}</span>
-                  <ArrowUpRight
-                    className="ml-auto h-3.5 w-3.5"
-                    aria-hidden="true"
-                  />
-                </a>
-              ))}
+              <a
+                href={site.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[44px] items-center gap-2.5 rounded-md border border-border bg-surface-1 px-4 text-sm text-muted-foreground transition-colors hover:bg-surface-2 hover:text-foreground"
+              >
+                <LinkedinIcon size={16} />
+                <span>LinkedIn</span>
+                <ArrowUpRight
+                  className="ml-auto h-3.5 w-3.5"
+                  aria-hidden="true"
+                />
+              </a>
             </div>
           </div>
         </div>

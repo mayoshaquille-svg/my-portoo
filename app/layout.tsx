@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   description: site.description,
   keywords: [
-    "Mayo",
+    "M. Mayo Shaquille",
     "IT Support",
     "troubleshooting",
     "user support",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         url: "/og.svg",
         width: 1200,
         height: 630,
-        alt: "Mayo — IT Support, Troubleshooting and Systems",
+        alt: "M. Mayo Shaquille — IT Support, Troubleshooting and Systems",
       },
     ],
   },

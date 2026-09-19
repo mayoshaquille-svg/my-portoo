@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="og-title og-desc">
-  <title id="og-title">Mayo — IT Support</title>
-  <desc id="og-desc">Monochrome portfolio cover: Mayo, IT Support, systems and troubleshooting.</desc>
+  <title id="og-title">M. Mayo Shaquille — IT Support</title>
+  <desc id="og-desc">Monochrome portfolio cover: M. Mayo Shaquille, IT Support, systems and troubleshooting.</desc>
   <rect width="1200" height="630" fill="#FFFFFF"/>
   <rect x="24" y="24" width="1152" height="582" fill="none" stroke="#000000" stroke-width="4"/>
   <rect x="48" y="48" width="120" height="24" fill="#000000"/>
-  <text x="80" y="240" font-family="monospace" font-size="64" font-weight="bold" letter-spacing="8" fill="#000000">MAYO</text>
+  <text x="80" y="240" font-family="monospace" font-size="44" font-weight="bold" letter-spacing="4" fill="#000000">M. MAYO SHAQUILLE</text>
   <text x="80" y="320" font-family="monospace" font-size="40" letter-spacing="4" fill="#000000">IT SUPPORT</text>
   <line x1="80" y1="360" x2="1120" y2="360" stroke="#CCCCCC" stroke-width="2"/>
   <text x="80" y="420" font-family="monospace" font-size="28" letter-spacing="2" fill="#666666">SYSTEMS / TROUBLESHOOTING</text>
