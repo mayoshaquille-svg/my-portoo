@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Caveat } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -7,38 +7,39 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { site } from "@/lib/constants";
 
-const sans = Inter({
+const sans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const mono = JetBrains_Mono({
-  variable: "--font-mono",
+const cursive = Caveat({
+  variable: "--font-cursive",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: site.title,
-    template: `%s | ${site.name} — ${site.role}`,
+    default: `${site.name} — ${site.role}`,
+    template: `%s | ${site.name}`,
   },
   description: site.description,
   keywords: [
-    "M. Mayo Shaquille",
-    "IT Support",
-    "troubleshooting",
-    "user support",
-    "system maintenance",
-    "application support",
-    "infrastructure support",
-    "documentation",
-    "Riau",
+    site.name,
+    site.role,
+    "IT Support Specialist",
+    "Troubleshooting",
+    "Network Infrastructure",
+    "System Maintenance",
+    "CCTV & WiFi Setup",
+    "Portfolio",
+    "Indonesia",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
-  // TODO: replace site.url with production domain before deploy
   metadataBase: new URL(site.url),
   alternates: {
     canonical: "/",
@@ -48,26 +49,25 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: site.title,
+    title: `${site.name} — ${site.role}`,
     description: site.description,
     url: "/",
-    siteName: site.title,
+    siteName: site.name,
     type: "website",
     images: [
       {
-        // TODO: replace /og.svg with raster OG image (1200x630 png/jpg) for broader social-media compatibility
-        url: "/og.svg",
+        url: "/images/profil.jpeg",
         width: 1200,
         height: 630,
-        alt: "M. Mayo Shaquille — IT Support, Troubleshooting and Systems",
+        alt: `${site.name} Portfolio`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: site.title,
+    title: `${site.name} — ${site.role}`,
     description: site.description,
-    images: ["/og.svg"],
+    images: ["/images/profil.jpeg"],
   },
 };
 
@@ -75,8 +75,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0c0c0c" },
-    { media: "(prefers-color-scheme: light)", color: "#f8f8f6" },
+    { media: "(prefers-color-scheme: dark)", color: "#111814" },
+    { media: "(prefers-color-scheme: light)", color: "#FBFBFA" },
   ],
 };
 
@@ -89,13 +89,13 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${sans.variable} ${mono.variable} h-full antialiased`}
+      className={`${sans.variable} ${cursive.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col overflow-x-clip bg-background font-sans text-foreground">
         <ThemeProvider>
           <a
             href="#main"
-            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-surface-0 focus:px-4 focus:py-2 focus:text-sm focus:ring-2 focus:ring-accent"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-[#1E3A2B] focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white focus:shadow-xl focus:ring-2 focus:ring-accent"
           >
             Skip to content
           </a>

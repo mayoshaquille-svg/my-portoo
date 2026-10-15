@@ -2,54 +2,62 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ── SERVICE DESK CONSOLE tokens ── */
 :root {
-  /* surfaces — layered depth */
-  --background: #f8f8f6;
-  --surface-0: #ffffff;
-  --surface-1: #f0efeb;
-  --surface-2: #e8e7e3;
+  /* Modern Warm Editorial Palette ("Olivia / Behance" Design System) */
+  --background: #FBFBFA;
+  --surface-0: #FFFFFF;
+  --surface-1: #F5F5F0;
+  --surface-2: #EFEFEA;
+  --surface-green: #1E3A2B;
+  --surface-green-card: #254636;
+  --surface-green-dark: #162C21;
 
-  --foreground: #171717;
-  --muted-foreground: #6b6b6b;
-  --subtle: #8a8a8a;
-  /* AA on --surface-1: 4.6:1 */
+  --foreground: #18221D;
+  --foreground-muted: #5F6E65;
+  --foreground-on-green: #FFFFFF;
+  --foreground-on-green-muted: #9EB3A6;
 
-  /* accent — amber signal */
-  --accent: #b45309;
-  /* amber-700, AA on white 4.7:1 */
-  --accent-muted: #fef3c7;
-  /* amber-100 */
-  --accent-glow: rgba(180, 83, 9, 0.08);
+  /* Accent: Warm Vibrant Amber / Tangerine */
+  --accent: #F59E0B;
+  --accent-hover: #D97706;
+  --accent-light: #FEF3C7;
+  --accent-badge: #ECA214;
 
-  /* borders */
-  --border: #d4d3cf;
-  --border-accent: #d97706;
-  /* amber-500 */
+  /* Borders */
+  --border: #E8E8E2;
+  --border-green: #2F5643;
+  --border-accent: #F59E0B;
 
-  --radius: 0.375rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-2xl: 2.25rem;
+  --radius-full: 9999px;
 }
 
 .dark {
-  --background: #0c0c0c;
-  --surface-0: #141414;
-  --surface-1: #1c1c1c;
-  --surface-2: #242424;
+  --background: #111814;
+  --surface-0: #18231E;
+  --surface-1: #1E2D26;
+  --surface-2: #24362E;
+  --surface-green: #162A20;
+  --surface-green-card: #1D3528;
+  --surface-green-dark: #0F1D16;
 
-  --foreground: #ededed;
-  --muted-foreground: #8a8a8a;
-  --subtle: #6b6b6b;
-  /* AA on --surface-1: 4.6:1 */
+  --foreground: #F2F7F4;
+  --foreground-muted: #9BB0A4;
+  --foreground-on-green: #FFFFFF;
+  --foreground-on-green-muted: #9EB3A6;
 
-  /* accent — amber signal dark */
-  --accent: #fbbf24;
-  /* amber-400, AA on #141414: 9.8:1 */
-  --accent-muted: rgba(251, 191, 36, 0.12);
-  --accent-glow: rgba(251, 191, 36, 0.06);
+  --accent: #F59E0B;
+  --accent-hover: #FBBF24;
+  --accent-light: rgba(245, 158, 11, 0.15);
+  --accent-badge: #F59E0B;
 
-  --border: #2a2a2a;
-  --border-accent: #f59e0b;
-  /* amber-500 */
+  --border: #283A31;
+  --border-green: #2F5643;
+  --border-accent: #F59E0B;
 }
 
 @theme inline {
@@ -58,15 +66,26 @@
   --color-surface-0: var(--surface-0);
   --color-surface-1: var(--surface-1);
   --color-surface-2: var(--surface-2);
+  --color-surface-green: var(--surface-green);
+  --color-surface-green-card: var(--surface-green-card);
+  --color-surface-green-dark: var(--surface-green-dark);
   --color-accent: var(--accent);
-  --color-accent-muted: var(--accent-muted);
-  --color-accent-glow: var(--accent-glow);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-light: var(--accent-light);
+  --color-accent-badge: var(--accent-badge);
   --color-border: var(--border);
+  --color-border-green: var(--border-green);
   --color-border-accent: var(--border-accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-subtle: var(--subtle);
+  --color-muted-foreground: var(--foreground-muted);
+  --color-on-green: var(--foreground-on-green);
+  --color-on-green-muted: var(--foreground-on-green-muted);
   --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  --font-cursive: var(--font-cursive);
+  --ease-agency: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.ease-agency {
+  transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 * {
@@ -75,7 +94,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
+  scroll-padding-top: 6.5rem;
 }
 
 body {
@@ -86,168 +105,98 @@ body {
   overflow-x: clip;
 }
 
-/* Focus visibility */
+/* Subtle paper noise overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Focus styles */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-/* Selection */
+/* Custom Selection */
 ::selection {
   background: var(--accent);
-  color: var(--surface-0);
+  color: #18221D;
 }
 
-/* ── Reduced motion ── */
+/* ── Custom Animations ── */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 26s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float-subtle 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float-subtle 4.5s ease-in-out 1.5s infinite;
+}
+
+/* Cursive font utility */
+.font-cursive {
+  font-family: var(--font-cursive), cursive, sans-serif;
+}
+
+/* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-
-  /* Never leave reveal content hidden when motion is disabled. */
-  .reveal {
-    opacity: 1;
-    animation: none;
+  .animate-spin-slow,
+  .animate-marquee,
+  .animate-float,
+  .animate-float-delay {
+    animation: none !important;
   }
-
-  .typewriter-caret {
-    animation: none;
-  }
-
-  .experience-node {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-
-  .console-glow:hover {
-    transform: none;
-  }
-}
-
-/* ── Scroll reveal ── */
-@keyframes reveal-up {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.reveal {
-  opacity: 0;
-  animation: reveal-up 0.4s ease-out forwards;
-}
-
-.reveal-delay-1 {
-  animation-delay: 0.08s;
-}
-
-.reveal-delay-2 {
-  animation-delay: 0.16s;
-}
-
-.reveal-delay-3 {
-  animation-delay: 0.24s;
-}
-
-.reveal-delay-4 {
-  animation-delay: 0.32s;
-}
-
-.hero-section {
-  position: relative;
-  isolation: isolate;
-}
-
-.hero-section::before {
-  position: absolute;
-  inset: 0 0 auto;
-  z-index: -1;
-  height: 28rem;
-  background-image:
-    linear-gradient(to right, var(--border) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
-  background-size: 4rem 4rem;
-  mask-image: linear-gradient(to bottom, black, transparent 85%);
-  opacity: 0.22;
-  pointer-events: none;
-  content: "";
-}
-
-.typewriter-caret {
-  display: inline-block;
-  width: 0.45rem;
-  height: 1em;
-  margin-left: 0.25rem;
-  vertical-align: -0.12em;
-  background: currentColor;
-  animation: caret-blink 1s steps(2, jump-none) infinite;
-}
-
-@keyframes caret-blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-.experience-node {
-  animation: node-pop 400ms ease-out 0.55s both;
-}
-
-@keyframes node-pop {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@media (min-width: 640px) {
-  .experience-node {
-    animation-name: node-pop-desktop;
-  }
-}
-
-@keyframes node-pop-desktop {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) scale(0.5);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(-50%) scale(1);
-  }
-}
-
-/* ── Console glow ring (accent used sparingly) ── */
-.console-glow {
-  box-shadow:
-    0 0 0 1px var(--border),
-    0 0 0 2px var(--accent-glow);
-  transition: box-shadow 180ms ease, transform 180ms ease;
-}
-
-.console-glow:hover {
-  box-shadow:
-    0 0 0 1px var(--border-accent),
-    0 0 0 3px var(--accent-glow);
-  transform: translateY(-2px);
 }
