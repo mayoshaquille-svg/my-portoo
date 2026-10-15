@@ -47,7 +47,7 @@ export function Projects() {
         </div>
 
         {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center gap-2.5 mb-12">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-10 sm:mb-12">
           {categories.map((category) => {
             const isActive = selectedCategory === category;
             return (
@@ -55,7 +55,7 @@ export function Projects() {
                 key={category}
                 type="button"
                 onClick={() => setSelectedCategory(category)}
-                className={`rounded-full px-5 py-2 text-xs font-bold transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+                className={`min-h-[38px] rounded-full px-4 sm:px-5 py-2 text-xs font-bold transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
                   isActive
                     ? "bg-[#1E3A2B] text-white shadow-md ring-1 ring-[#1E3A2B] scale-105"
                     : "bg-black/5 dark:bg-white/5 text-[#5F6E65] dark:text-[#9BB0A4] hover:bg-black/10 dark:hover:bg-white/10 hover:text-[#16231C] dark:hover:text-[#F2F7F4] ring-1 ring-black/5 dark:ring-white/10"
@@ -89,7 +89,7 @@ export function Projects() {
                 className={`group cursor-pointer rounded-[2rem] p-1.5 ring-1 ring-black/5 dark:ring-white/10 bg-black/5 dark:bg-white/5 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:shadow-2xl hover:shadow-black/5 dark:hover:shadow-black/30 hover:-translate-y-1 ${spanClass}`}
               >
                 {/* Double-Bezel Inner Core */}
-                <div className="rounded-[calc(2rem-0.375rem)] bg-white dark:bg-[#18231E] p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] flex flex-col justify-between h-full">
+                <div className="rounded-[calc(2rem-0.375rem)] bg-white dark:bg-[#18231E] p-4 sm:p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] flex flex-col justify-between h-full">
                   {/* Mockup Preview Container */}
                   <div className={`relative overflow-hidden rounded-[calc(2rem-0.75rem)] bg-black/5 dark:bg-white/5 ring-1 ring-black/5 dark:ring-white/10 p-2 sm:p-3 flex items-center justify-center ${
                     isFeatured || isSecondWide ? "aspect-[16/9] sm:aspect-[16/8] lg:aspect-[16/9]" : "aspect-[16/10]"

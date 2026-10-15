@@ -39,17 +39,17 @@ export function About() {
               </div>
 
               {/* Floating Micro-Pill Skill Badges radiating along bottom edge */}
-              <div className="absolute -bottom-3 inset-x-0 flex flex-wrap justify-center gap-1.5 sm:gap-2 px-2 z-20">
-                <span className="rounded-full bg-[#F59E0B] px-3.5 py-1 text-[10px] uppercase tracking-wider font-bold text-black shadow-lg ring-1 ring-black/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] -rotate-2 select-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-105">
+              <div className="mt-6 flex flex-wrap justify-center gap-1.5 sm:gap-2 px-2 z-20 md:absolute md:mt-0 md:-bottom-3 md:inset-x-0">
+                <span className="rounded-full bg-[#F59E0B] px-3.5 py-1 text-[10px] uppercase tracking-wider font-bold text-black shadow-lg ring-1 ring-black/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] md:-rotate-2 select-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-105">
                   Hardware Diagnostics
                 </span>
-                <span className="rounded-full bg-[#162C21] px-3.5 py-1 text-[10px] uppercase tracking-wider font-semibold text-white shadow-lg ring-1 ring-white/15 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] rotate-1 select-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-105">
+                <span className="rounded-full bg-[#162C21] px-3.5 py-1 text-[10px] uppercase tracking-wider font-semibold text-white shadow-lg ring-1 ring-white/15 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] md:rotate-1 select-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-105">
                   LAN Cabling
                 </span>
-                <span className="rounded-full bg-[#F59E0B] px-3.5 py-1 text-[10px] uppercase tracking-wider font-bold text-black shadow-lg ring-1 ring-black/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] rotate-3 select-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-105">
+                <span className="rounded-full bg-[#F59E0B] px-3.5 py-1 text-[10px] uppercase tracking-wider font-bold text-black shadow-lg ring-1 ring-black/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] md:rotate-3 select-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-105">
                   CCTV Systems
                 </span>
-                <span className="rounded-full bg-[#162C21] px-3.5 py-1 text-[10px] uppercase tracking-wider font-semibold text-white shadow-lg ring-1 ring-white/15 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] -rotate-1 select-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-105">
+                <span className="rounded-full bg-[#162C21] px-3.5 py-1 text-[10px] uppercase tracking-wider font-semibold text-white shadow-lg ring-1 ring-white/15 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] md:-rotate-1 select-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-105">
                   WiFi Networks
                 </span>
               </div>
@@ -82,7 +82,7 @@ export function About() {
             </p>
 
             {/* Clean Telemetry Metrics with Inner Highlights */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-2">
               <div className="rounded-2xl p-4 sm:p-5 ring-1 ring-white/10 bg-white/[0.04] shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] flex flex-col justify-between">
                 <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#F59E0B] tracking-tight">
                   3.71

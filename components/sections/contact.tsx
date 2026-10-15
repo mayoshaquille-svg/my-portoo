@@ -75,9 +75,9 @@ export function Contact() {
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F59E0B] text-black shadow-sm transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105">
                     <Mail className="h-5 w-5" strokeWidth={1.25} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-[11px] font-semibold uppercase text-[#9EB3A6]">Send an Email</p>
-                    <p className="text-sm font-bold text-white">{site.email}</p>
+                    <p className="text-sm font-bold text-white break-all sm:break-normal">{site.email}</p>
                   </div>
                 </div>
               </a>
@@ -118,7 +118,7 @@ export function Contact() {
           {/* Right Column: Interactive Form in Double-Bezel Frame */}
           <div className="lg:col-span-7">
             <div className="rounded-[2rem] p-1.5 ring-1 ring-white/10 bg-white/5 shadow-2xl">
-              <div className="rounded-[calc(2rem-0.375rem)] bg-[#254636] p-6 sm:p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.12)]">
+              <div className="rounded-[calc(2rem-0.375rem)] bg-[#254636] p-4 sm:p-6 md:p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.12)]">
                 {submitted ? (
                   <div className="flex flex-col items-center justify-center py-12 text-center">
                     <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#F59E0B] text-black mb-4 shadow-md">
@@ -137,8 +137,8 @@ export function Contact() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                    <div className="grid gap-5 sm:grid-cols-2">
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-5">
+                    <div className="grid gap-4 sm:gap-5 sm:grid-cols-2">
                       {/* Your Name */}
                       <div>
                         <label className="block text-xs font-bold uppercase tracking-wider text-[#C6D8CD] mb-2">
@@ -151,7 +151,7 @@ export function Contact() {
                             placeholder="Ex. John Doe"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="w-full rounded-[calc(1rem-0.25rem)] bg-[#1D372B] px-4 py-3 text-sm text-white placeholder-[#778F82] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] focus:outline-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                            className="w-full rounded-[calc(1rem-0.25rem)] bg-[#1D372B] px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-white placeholder-[#778F82] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] focus:outline-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
                           />
                         </div>
                       </div>
@@ -168,13 +168,13 @@ export function Contact() {
                             placeholder="example@gmail.com"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="w-full rounded-[calc(1rem-0.25rem)] bg-[#1D372B] px-4 py-3 text-sm text-white placeholder-[#778F82] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] focus:outline-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                            className="w-full rounded-[calc(1rem-0.25rem)] bg-[#1D372B] px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-white placeholder-[#778F82] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] focus:outline-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
                           />
                         </div>
                       </div>
                     </div>
 
-                    <div className="grid gap-5 sm:grid-cols-2">
+                    <div className="grid gap-4 sm:gap-5 sm:grid-cols-2">
                       {/* Phone */}
                       <div>
                         <label className="block text-xs font-bold uppercase tracking-wider text-[#C6D8CD] mb-2">
@@ -187,7 +187,7 @@ export function Contact() {
                             placeholder="+62 899-8164-856"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            className="w-full rounded-[calc(1rem-0.25rem)] bg-[#1D372B] px-4 py-3 text-sm text-white placeholder-[#778F82] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] focus:outline-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                            className="w-full rounded-[calc(1rem-0.25rem)] bg-[#1D372B] px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-white placeholder-[#778F82] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] focus:outline-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
                           />
                         </div>
                       </div>
@@ -204,7 +204,7 @@ export function Contact() {
                             placeholder="Riau, Indonesia"
                             value={formData.country}
                             onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                            className="w-full rounded-[calc(1rem-0.25rem)] bg-[#1D372B] px-4 py-3 text-sm text-white placeholder-[#778F82] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] focus:outline-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                            className="w-full rounded-[calc(1rem-0.25rem)] bg-[#1D372B] px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-white placeholder-[#778F82] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] focus:outline-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
                           />
                         </div>
                       </div>
@@ -219,7 +219,7 @@ export function Contact() {
                         <select
                           value={formData.service}
                           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                          className="w-full rounded-[calc(1rem-0.25rem)] bg-[#1D372B] px-4 py-3 text-sm text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] focus:outline-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                          className="w-full rounded-[calc(1rem-0.25rem)] bg-[#1D372B] px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] focus:outline-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
                         >
                           <option value="Hardware Troubleshooting">Hardware & OS Diagnostics</option>
                           <option value="Network Infrastructure">Network Infrastructure & Cabling</option>
@@ -242,7 +242,7 @@ export function Contact() {
                           placeholder="Tell me about your technical requirements or system challenges..."
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          className="w-full rounded-[calc(1rem-0.25rem)] bg-[#1D372B] px-4 py-3 text-sm text-white placeholder-[#778F82] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] focus:outline-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] resize-none"
+                          className="w-full rounded-[calc(1rem-0.25rem)] bg-[#1D372B] px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-white placeholder-[#778F82] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] focus:outline-none transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] resize-none"
                         />
                       </div>
                     </div>

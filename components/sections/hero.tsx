@@ -30,7 +30,7 @@ export function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl font-extrabold tracking-tight text-[#16231C] dark:text-[#F2F7F4] sm:text-5xl lg:text-[3.5rem] lg:leading-[1.12]">
+            <h1 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-[#16231C] dark:text-[#F2F7F4] lg:leading-[1.12]">
               I&apos;m{" "}
               <span className="text-[#F59E0B] font-extrabold">
                 {site.shortName} Shaquille,
@@ -49,11 +49,11 @@ export function Hero() {
             </p>
 
             {/* Action Buttons Row */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
               {/* Primary Button-in-Button CTA */}
               <Link
                 href="#projects"
-                className="group inline-flex items-center gap-3 rounded-full bg-[#1E3A2B] pl-6 pr-2 py-2 text-sm font-semibold text-white shadow-xl ring-1 ring-white/10 hover:bg-[#274B38] active:scale-[0.98] transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#1E3A2B] pl-5 sm:pl-6 pr-2 py-2 text-sm font-semibold text-white shadow-xl ring-1 ring-white/10 hover:bg-[#274B38] active:scale-[0.98] transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] min-h-[44px]"
               >
                 <span>View My Portfolio</span>
                 <span className="w-8 h-8 rounded-full bg-[#F59E0B] text-black flex items-center justify-center shadow-sm group-hover:translate-x-1 group-hover:-translate-y-[0.5px] group-hover:scale-105 active:scale-[0.98] transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
@@ -64,7 +64,7 @@ export function Hero() {
               {/* Secondary Outline Pill */}
               <Link
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-full border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/5 backdrop-blur-md px-7 py-3 text-sm font-semibold text-[#1E3A2B] dark:text-white shadow-xs ring-1 ring-black/5 dark:ring-white/10 hover:border-[#1E3A2B] hover:bg-[#1E3A2B] hover:text-white dark:hover:bg-white/10 active:scale-[0.98] transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                className="inline-flex items-center justify-center rounded-full border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/5 backdrop-blur-md px-6 sm:px-7 py-2.5 sm:py-3 text-sm font-semibold text-[#1E3A2B] dark:text-white shadow-xs ring-1 ring-black/5 dark:ring-white/10 hover:border-[#1E3A2B] hover:bg-[#1E3A2B] hover:text-white dark:hover:bg-white/10 active:scale-[0.98] transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] min-h-[44px]"
               >
                 Hire Me
               </Link>
@@ -85,7 +85,7 @@ export function Hero() {
 
           {/* Right Column: Profile Picture with Double-Bezel Framing & Rotating Stamp */}
           <div className="relative flex justify-center lg:col-span-5 lg:justify-end">
-            <div className="relative w-full max-w-[440px]">
+            <div className="relative w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px]">
               {/* Outer Shell Double-Bezel Framing */}
               <div className="rounded-[2.5rem] p-1.5 ring-1 ring-black/5 dark:ring-white/10 bg-black/5 dark:bg-white/5 shadow-2xl">
                 {/* Inner Core with Specular Highlight */}
@@ -103,7 +103,7 @@ export function Hero() {
 
               {/* Circular Rotating "HIRE ME" Live Animated Stamp overlay */}
               <div
-                className="absolute right-[2%] top-[20%] z-30 flex h-24 w-24 sm:h-28 sm:w-28 items-center justify-center rounded-full bg-[#1E3A2B] text-white shadow-2xl ring-1 ring-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)] hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                className="absolute right-0 sm:right-[2%] top-[14%] sm:top-[20%] z-30 flex h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 items-center justify-center rounded-full bg-[#1E3A2B] text-white shadow-2xl ring-1 ring-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)] hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
                 aria-label="Hire Me circular stamp"
               >
                 {/* Rotating Text */}
@@ -122,8 +122,8 @@ export function Hero() {
                   </svg>
                 </div>
                 {/* Center Amber Icon Circle */}
-                <div className="relative z-10 flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-[#F59E0B] text-black shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]">
-                  <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
+                <div className="relative z-10 flex h-8 w-8 sm:h-10 sm:w-10 md:h-11 md:w-11 items-center justify-center rounded-full bg-[#F59E0B] text-black shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]">
+                  <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={1.5} />
                 </div>
               </div>
 

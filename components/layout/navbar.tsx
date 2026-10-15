@@ -12,39 +12,31 @@ export function Navbar() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      const scrollPos = window.scrollY;
+      setScrolled(scrollPos > 30);
 
-  React.useEffect(() => {
-    const sectionIds = nav.map((item) => item.href.replace("#", ""));
-    const elements = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean) as HTMLElement[];
+      if (scrollPos < 100) {
+        setActiveId("top");
+        return;
+      }
 
-    if (elements.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
+      const sectionIds = nav.map((item) => item.href.replace("#", ""));
+      const scrollThreshold = scrollPos + 180;
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollThreshold >= top) {
+            setActiveId(sectionIds[i]);
+            break;
           }
         }
-      },
-      {
-        rootMargin: "-90px 0px -55% 0px",
-        threshold: 0,
       }
-    );
+    };
 
-    for (const el of elements) {
-      observer.observe(el);
-    }
-
-    return () => observer.disconnect();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -58,6 +50,7 @@ export function Navbar() {
         {/* Brand Logo */}
         <Link
           href="#top"
+          onClick={() => setActiveId("top")}
           className="group flex items-center gap-2.5 font-bold tracking-tight text-white"
         >
           <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#F59E0B] text-xs font-black text-black shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] transition-transform duration-500 ease-agency group-hover:scale-105">
@@ -77,6 +70,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={() => setActiveId(id)}
                 className={`relative rounded-full px-3.5 py-1.5 transition-all duration-500 ease-agency ${
                   isActive
                     ? "bg-white/[0.08] font-semibold text-[#F59E0B] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"
@@ -140,7 +134,10 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setActiveId(id);
+                    setOpen(false);
+                  }}
                   className={`flex items-center justify-between rounded-2xl px-4 py-2.5 text-sm font-medium transition-all duration-500 ease-agency animate-in fade-in slide-in-from-bottom-2 fill-mode-backwards ${delayClass} ${
                     isActive
                       ? "bg-[#F59E0B] text-black font-semibold shadow-xs"
@@ -155,7 +152,10 @@ export function Navbar() {
             <div className="pt-3 mt-1 border-t border-white/10 animate-in fade-in slide-in-from-bottom-2 fill-mode-backwards delay-300 duration-500 ease-agency">
               <Link
                 href="#contact"
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setActiveId("contact");
+                  setOpen(false);
+                }}
                 className="group relative flex w-full items-center justify-center rounded-full bg-white/10 p-1 ring-1 ring-white/15 active:scale-[0.98] transition-all duration-700 ease-agency shadow-sm"
               >
                 <span className="flex w-full items-center justify-center rounded-full bg-[#F59E0B] py-2.5 text-sm font-bold text-black transition-all duration-500 ease-agency group-hover:bg-amber-400">

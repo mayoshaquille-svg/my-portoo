@@ -41,19 +41,19 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Inner Core */}
-        <div className="max-h-[calc(90vh-0.75rem)] w-full overflow-y-auto rounded-[calc(2.25rem-0.375rem)] bg-[#FBFBFA] dark:bg-[#18231E] p-6 sm:p-8 text-[#16231C] dark:text-[#F2F7F4] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
+        <div className="max-h-[calc(90vh-0.75rem)] w-full overflow-y-auto rounded-[calc(2.25rem-0.375rem)] bg-[#FBFBFA] dark:bg-[#18231E] p-4 sm:p-6 md:p-8 text-[#16231C] dark:text-[#F2F7F4] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
           {/* Close Button */}
           <button
             type="button"
             onClick={onClose}
             aria-label="Close modal"
-            className="absolute right-5 top-5 sm:right-7 sm:top-7 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-[#1E3A2B] text-white hover:bg-[#F59E0B] hover:text-black transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ring-1 ring-white/10 shadow-md"
+            className="absolute right-3 top-3 sm:right-6 sm:top-6 z-20 flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-[#1E3A2B] text-white hover:bg-[#F59E0B] hover:text-black transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ring-1 ring-white/10 shadow-md"
           >
             <X className="h-4 w-4" strokeWidth={1.25} />
           </button>
 
           {/* Modal Header */}
-          <div className="pr-12">
+          <div className="pr-10 sm:pr-14">
             <div className="flex flex-wrap items-center gap-2 mb-3">
               {project.tags.map((tag) => (
                 <span
